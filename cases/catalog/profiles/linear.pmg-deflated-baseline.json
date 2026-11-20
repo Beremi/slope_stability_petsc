@@ -1,0 +1,36 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:375577aa79b2f27d606c705dcab9dabd78fad6496c168662f31a2e2f8cc1d89c"
+  },
+  "provenance": {
+    "origin": "native:configs/solver_profiles/pmg-deflated-baseline.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "linear.pmg-deflated-baseline",
+    "title": "linear profile pmg-deflated-baseline"
+  },
+  "family": "linear",
+  "policy": {
+    "ksp_type": "fgmres",
+    "operator_class": "nonsymmetric",
+    "relative_tolerance": 0.1,
+    "absolute_tolerance": 1e-50,
+    "maximum_iterations": 200,
+    "restart": 30,
+    "expert_options": {},
+    "initial_guess": "coarse_only",
+    "orthogonalization": "petsc",
+    "use_mdot_gemv": false
+  },
+  "id": "sha256:23129712b556a637ce703d56312ace526f36896e0445daca6ba23bacf4f17367"
+}

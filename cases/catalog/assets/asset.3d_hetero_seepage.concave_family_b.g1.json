@@ -1,0 +1,138 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:96726dbabeca3abe9362f94e48cc030b782816d1b04e23e211f7838c5b984f97"
+  },
+  "provenance": {
+    "origin": "native:meshes/3d_hetero_seepage/concave_family_b.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.3d_hetero_seepage.concave_family_b.g1",
+    "title": "3d_hetero_seepage concave_family_b G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/68d191a3d4b9933fcf37b3d3a92e76f198e4f92485db97dcc120822432465168.msh",
+    "sha256": "68d191a3d4b9933fcf37b3d3a92e76f198e4f92485db97dcc120822432465168"
+  },
+  "dimension": 3,
+  "cell_type": "tetrahedron",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "concave_family_b"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:surface_a",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_b",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_c",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_d",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_e",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_f",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_g",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_h",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_i",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_j",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_dry",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_free",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_porous",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:x_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:y_lateral_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:cover_layer",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:general_foundation",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:weak_foundation",
+      "kind": "region",
+      "dimension": 3
+    }
+  ],
+  "id": "sha256:df640f4c5faa600680e387865dcc4d0e0ef761b308b0c7fc784c15cc9911b403"
+}

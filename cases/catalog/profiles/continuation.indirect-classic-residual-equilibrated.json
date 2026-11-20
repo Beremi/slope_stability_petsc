@@ -1,0 +1,38 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:3b1b78185bf531b2e763484832d19e8d6b26f433d093132710b254346bad12d3"
+  },
+  "provenance": {
+    "origin": "profile:continuation.indirect-classic",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "continuation.indirect-classic-residual-equilibrated",
+    "title": "indirect continuation with residual-equilibrated seeds"
+  },
+  "family": "continuation",
+  "policy": {
+    "method": "indirect",
+    "initial_factor": 1.0,
+    "initial_step": 0.1,
+    "minimum_step": 0.001,
+    "maximum_step": 0.1,
+    "maximum_work": 1e+300,
+    "initial_work_scale": 0.2,
+    "scaled_slope_tolerance": 0.001,
+    "factor_increment_stop": 0.001,
+    "maximum_accepted_states": 100,
+    "initial_nonlinear_stopping_criterion": "relative_residual",
+    "initial_nonlinear_stopping_tolerance": 0.0001
+  },
+  "id": "sha256:4460e8216d0f3e81a473c081bb03e93ef1eb5fd6ca1c5cb7043bb30fd814762b"
+}

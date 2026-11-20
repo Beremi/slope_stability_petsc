@@ -1,0 +1,29 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:0d2a802c5a09cc8f9247600e677fe6b52b66496f44c112f5a8d3be7f56557446"
+  },
+  "provenance": {
+    "origin": "native:configs/seepage_profiles/darcy-tight.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "seepage.darcy-tight",
+    "title": "seepage profile darcy-tight"
+  },
+  "family": "seepage",
+  "policy": {
+    "linear_tolerance": 1e-10,
+    "linear_max_iter": 500,
+    "nonlinear_max_iter": 50
+  },
+  "id": "sha256:a123302ff5c90c1734b0a42ddb4ae7568584ca02d7684c448822842891de7cbe"
+}

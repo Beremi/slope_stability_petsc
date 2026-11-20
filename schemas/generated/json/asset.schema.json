@@ -1,0 +1,138 @@
+{
+  "$id": "https://schemas.slope-stability.invalid/v1/asset.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "cell_type": {
+      "enum": [
+        "triangle",
+        "tetrahedron"
+      ]
+    },
+    "coordinate_order": {
+      "enum": [
+        1,
+        2,
+        4
+      ]
+    },
+    "created_by": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "tool_version",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "dimension": {
+      "enum": [
+        2,
+        3
+      ]
+    },
+    "extensions": {
+      "propertyNames": {
+        "pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+      },
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "slope_stability.asset"
+    },
+    "mesh_source": {
+      "additionalProperties": false,
+      "properties": {
+        "importer": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "importer",
+        "path",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "schema_version": {
+      "additionalProperties": false,
+      "properties": {
+        "major": {
+          "const": 1
+        },
+        "minor": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "patch": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "type": "object"
+    },
+    "supports": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "variants": {
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "created_by",
+    "provenance",
+    "extensions",
+    "identity",
+    "mesh_source",
+    "dimension",
+    "cell_type",
+    "coordinate_order",
+    "variants",
+    "supports"
+  ],
+  "title": "slope_stability.asset",
+  "type": "object"
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:350106a9881c6425c6dedc2936b70ee3ab0fdceb07a43189e3a25475a4cd8f80"
+  },
+  "provenance": {
+    "origin": "native:meshes/2d_homo_slope/h0.5.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.2d_homo_slope.h0.5.g1",
+    "title": "2d_homo_slope h0.5 G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/aba7f33bedce985e2f6658f1ad388c83250f356ca25b1a8859639525df9bb1e0.msh",
+    "sha256": "aba7f33bedce985e2f6658f1ad388c83250f356ca25b1a8859639525df9bb1e0"
+  },
+  "dimension": 2,
+  "cell_type": "triangle",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "h0.5"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:crest",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:left",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:right",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:slope_surface",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:left",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:right",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 2
+    }
+  ],
+  "id": "sha256:173bc925bd5d6c1f32fe4affbc478ba5382764482a9785105507381d9931e644"
+}

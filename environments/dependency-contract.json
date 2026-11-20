@@ -1,0 +1,94 @@
+{
+  "kind": "slope_stability.dependency_contract",
+  "native": {
+    "blas_lapack": {
+      "name": "openblas",
+      "version": "0.3.34"
+    },
+    "hdf5": {
+      "parallel": true,
+      "version": "2.2.0"
+    },
+    "hypre": {
+      "source_revision": "da9f93f8d698f4caaaff35fe81655b8ad7bb91f9",
+      "version": "3.0.0"
+    },
+    "metis": {
+      "source_revision": "69fb26dd042836aa16f26fb939b540c5ca71133d",
+      "version": "5.1.0"
+    },
+    "openmpi": {
+      "thread_level": "funneled",
+      "version": "5.0.11"
+    },
+    "parmetis": {
+      "source_revision": "f5e3aab04fd5fe6e09fa02f885c1c29d349f9f8b",
+      "version": "4.0.3"
+    },
+    "petsc": {
+      "index_variants": [32, 64],
+      "performance_profile": {
+        "blas_threads": 1,
+        "c_optimization_flags": ["-O2", "-g"],
+        "cuda": false,
+        "openmp": true,
+        "openmp_kernels": true,
+        "superlu_dist": {
+          "openmp": false,
+          "source_revision": "bce5318a9141cff5840071665b6ffccfc5bbba82",
+          "version": "9.2.0"
+        }
+      },
+      "precision": "double",
+      "scalar": "real",
+      "source_archive_sha256": "105c77cbc7361c078e013448bcad2c57ce8081377e5a8e49b3cc213f1a0a4a63",
+      "version": "3.24.2"
+    },
+    "yyjson": {
+      "license": "MIT",
+      "source_revision": "8b4a38dc994a110abaec8a400615567bd996105f",
+      "source_sha256": {
+        "yyjson.c": "ac2e9bbb2e2d9149d90878d40506a1d624fa0b33c979a11b61075c54782c6d6a",
+        "yyjson.h": "175867c5493a5df648cec566717fa1c29aa2f6096f5f0cf1efad0b65e1f6d7b3"
+      },
+      "version": "0.12.0"
+    }
+  },
+  "python": {
+    "implementation": "CPython",
+    "locked_packages": {
+      "annotated-types": "0.8.0",
+      "flexcache": "0.3",
+      "flexparser": "0.4",
+      "h5py": "3.16.0",
+      "markdown-it-py": "4.2.0",
+      "mdurl": "0.1.2",
+      "meshio": "5.3.5",
+      "numpy": "2.4.2",
+      "pint": "0.25.2",
+      "platformdirs": "4.11.0",
+      "pydantic": "2.12.5",
+      "pydantic-core": "2.41.5",
+      "pygments": "2.20.0",
+      "rich": "15.0.0",
+      "typing-extensions": "4.16.0",
+      "typing-inspection": "0.4.2"
+    },
+    "version": "3.12",
+    "workspace_members": ["slope-codegen", "slope-stability"]
+  },
+  "resolver": {
+    "formatter": {
+      "name": "clang-format",
+      "version": "23.1.5"
+    },
+    "spack": {
+      "commit": "3e19345b6e12f5ff1b874f4059622fc6a1fd804a",
+      "version": "1.2.2"
+    },
+    "uv": {
+      "version": "0.8.22"
+    }
+  },
+  "schema_version": 1
+}

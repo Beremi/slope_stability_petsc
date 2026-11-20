@@ -1,0 +1,44 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:4d8641986aab61bbcbc02002108366a19c3beb14233931ae9a41da2d97128cc4"
+  },
+  "provenance": {
+    "origin": "native:configs/solver_profiles/pmg-deflated-baseline.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "pmg.pmg-deflated-baseline",
+    "title": "pmg profile pmg-deflated-baseline"
+  },
+  "family": "pmg",
+  "policy": {
+    "enabled": true,
+    "smoother": "chebyshev",
+    "pre_smoothing_steps": 2,
+    "post_smoothing_steps": 2,
+    "coarse_solver": "gamg",
+    "coarse_direct_maximum_dofs": 50000,
+    "active_rank_policy": "adaptive",
+    "levels": [
+      1,
+      2,
+      4
+    ],
+    "mechanics_matrix_free": false,
+    "matrix_free_galerkin": true,
+    "fgmres_full_iterate_post": false,
+    "coarse_factorization": "petsc_default",
+    "shared_point_balance": "petsc",
+    "parmetis_seed": -1
+  },
+  "id": "sha256:7c5e6b80a80d630b11f49f52634354bbb4ad6d1b18c142ecedbfb60379742da9"
+}

@@ -1,0 +1,107 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:799563a53ab56db4c1cf462b9680af26f7732b27ac7949fbb25f8098102f9664"
+  },
+  "provenance": {
+    "origin": "native:meshes/3d_homo_slope/adaptive_family_a_l1.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {
+    "hydraulic_support_adaptation": {
+      "id": "homogeneous_hydraulic_exterior_planes_v1",
+      "source_sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead",
+      "support_name": "boundary:homogeneous_hydraulic_reference",
+      "source_revision": "8401cc52d9594b60a2b45df35f15c509ccdc9884",
+      "source_path": "slope_stability/slope_stability_3D_homo_seepage_SSR.m",
+      "coordinate_tolerance_m": 0.001
+    }
+  },
+  "identity": {
+    "name": "asset.3d_homo_slope.adaptive_family_a_l1.g1",
+    "title": "3d_homo_slope adaptive_family_a_l1 G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead.msh",
+    "sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead"
+  },
+  "dimension": 3,
+  "cell_type": "tetrahedron",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "adaptive_family_a_l1"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:crest",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:slope_surface",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:x_max",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:x_min",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:z_max",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:z_min",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:x_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:z_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "boundary:homogeneous_hydraulic_reference",
+      "kind": "boundary",
+      "dimension": 2
+    }
+  ],
+  "id": "sha256:6241bc37de78dfa9e7839aa263691c99ff0b24f084bef807a4a2cdcf9a762468"
+}

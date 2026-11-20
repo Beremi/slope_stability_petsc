@@ -1,0 +1,78 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:cfa185c2a75ecdfcf977ffe0964f456db76d61b4f4094281568d0c455c303511"
+  },
+  "provenance": {
+    "origin": "native:meshes/3d_siopt/reference_l0.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.3d_siopt.reference_l0.g1",
+    "title": "3d_siopt reference_l0 G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/c21d6972f4d2a6c22287e023755db03c2f1bca3921e179f1602a63544d6edd18.msh",
+    "sha256": "c21d6972f4d2a6c22287e023755db03c2f1bca3921e179f1602a63544d6edd18"
+  },
+  "dimension": 3,
+  "cell_type": "tetrahedron",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "reference_l0"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:slope_surface",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:x_max",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:z_min",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:x_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:z_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:reference_mass",
+      "kind": "region",
+      "dimension": 3
+    }
+  ],
+  "id": "sha256:3f03aee817dcd827e218c8b3f944798d41c132e0826ef06496cfce10c3fdea5b"
+}

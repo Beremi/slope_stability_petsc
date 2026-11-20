@@ -1,0 +1,108 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:058dbbc18f7f98fe95edc8566f00e2e474a1aa9a765cc2b01dd14554d72868ed"
+  },
+  "provenance": {
+    "origin": "native:meshes/2d_kozinec/default.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.2d_kozinec.default.g1",
+    "title": "2d_kozinec default G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/ded7b23e13b9d837709fcef275543c15bd3d7e5a2f9dd2da064758e1c245a4b2.msh",
+    "sha256": "ded7b23e13b9d837709fcef275543c15bd3d7e5a2f9dd2da064758e1c245a4b2"
+  },
+  "dimension": 2,
+  "cell_type": "triangle",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "default"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:exterior",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:left",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:right",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:left",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:right",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:subdomain_1",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:subdomain_2",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:subdomain_3",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:subdomain_4",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:subdomain_5",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:subdomain_6",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:subdomain_7",
+      "kind": "region",
+      "dimension": 2
+    }
+  ],
+  "id": "sha256:83136f708eefae55aa5a2880368f372233002e586b849c84ba682e88f023489a"
+}

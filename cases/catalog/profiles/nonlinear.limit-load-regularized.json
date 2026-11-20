@@ -1,0 +1,33 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:2248f1b5a91dbf327924d9effef494b587b334daaff51ade60fba9f32969f681"
+  },
+  "provenance": {
+    "origin": "native:configs/newton_profiles/limit-load-regularized.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "nonlinear.limit-load-regularized",
+    "title": "nonlinear profile limit-load-regularized"
+  },
+  "family": "nonlinear",
+  "policy": {
+    "method": "fixed-load:alg5:relative_residual",
+    "relative_tolerance": 0.0001,
+    "absolute_tolerance": 0.0001,
+    "stopping_criterion": "relative_residual",
+    "stopping_tolerance": 0.0001,
+    "regularization_minimum": 0.0001,
+    "maximum_iterations": 200
+  },
+  "id": "sha256:7eb8c93ebdbede18d6ab2d3b1c2a02edf9a20584f4d19af510b0d68ea9629cb8"
+}

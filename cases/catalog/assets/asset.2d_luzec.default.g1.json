@@ -1,0 +1,118 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:463c68cf9954a6e1cfe0222a6a804a003ffd88e0abfa5ec8f2bc773697435d71"
+  },
+  "provenance": {
+    "origin": "native:meshes/2d_luzec/default.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.2d_luzec.default.g1",
+    "title": "2d_luzec default G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/7ed38a724d0a0ac96fc8d923d9c9d3aa779b711ef44224bfb529274b0d0eff29.msh",
+    "sha256": "7ed38a724d0a0ac96fc8d923d9c9d3aa779b711ef44224bfb529274b0d0eff29"
+  },
+  "dimension": 2,
+  "cell_type": "triangle",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "default"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:head_support",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:left",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:right",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_support",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:left",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:right",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:S1",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S2",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S3",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S4",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S5",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S6",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S7",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:S8",
+      "kind": "region",
+      "dimension": 2
+    }
+  ],
+  "id": "sha256:e82131bc6aa870368089e66971e7dbabafb646d9edbd30289ac1ba6caad8d44b"
+}

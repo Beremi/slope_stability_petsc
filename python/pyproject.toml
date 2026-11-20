@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: BSD-2-Clause
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slope-stability"
+version = "0.1.0"
+description = "Serial authoring and result tools for the slope-stability engine"
+requires-python = ">=3.12"
+license = "BSD-2-Clause"
+# Lower bounds are the versions pinned in uv.lock. Upper bounds exclude the
+# next major release and, for Pint (0.x), minor releases newer than the newest
+# tested one. docs/building.md lists the tested interpreters and versions.
+dependencies = [
+    "h5py>=3.16.0,<4",
+    "meshio>=5.3.5,<6",
+    "numpy>=2.4.2,<3",
+    "pint>=0.25.2,<0.27",
+    "pydantic>=2.12.5,<3",
+]
+
+[project.scripts]
+slope-stability = "slope_stability.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,29 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:345c8a0993ff53944d8489a2d18bfe163fce80aa8ab978668eeeabca29e357d5"
+  },
+  "provenance": {
+    "origin": "native:configs/seepage_profiles/sloan2013-steady.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "seepage.sloan2013-steady",
+    "title": "seepage profile sloan2013-steady"
+  },
+  "family": "seepage",
+  "policy": {
+    "linear_tolerance": 1e-10,
+    "linear_max_iter": 300,
+    "nonlinear_max_iter": 100
+  },
+  "id": "sha256:76fa4953aa3033a1d9e065595f867b880f41c5b2544de3a362d471d1ebd26031"
+}

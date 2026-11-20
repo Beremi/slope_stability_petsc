@@ -1,0 +1,33 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:83f5fa3303e25a3c3be24f0cdd43402d1f11cde03eb81f2a03d7287054584e97"
+  },
+  "provenance": {
+    "origin": "native:configs/newton_profiles/indirect-regularized-dlambda-stop.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "nonlinear.indirect-regularized-dlambda-stop",
+    "title": "nonlinear profile indirect-regularized-dlambda-stop"
+  },
+  "family": "nonlinear",
+  "policy": {
+    "method": "indirect-ssr:alg5:absolute_delta_lambda",
+    "relative_tolerance": 0.0001,
+    "absolute_tolerance": 0.0001,
+    "stopping_criterion": "absolute_delta_lambda",
+    "stopping_tolerance": 0.0001,
+    "regularization_minimum": 0.0001,
+    "maximum_iterations": 200
+  },
+  "id": "sha256:7e99c8df1520b3790ce2d7bd07466c3b6b5ecbd706c06d3f2b998122ee818982"
+}

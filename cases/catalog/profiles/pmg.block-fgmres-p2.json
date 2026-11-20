@@ -1,0 +1,45 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:4218e349f6e70d2cc1215bcca20adca1f6a7828a2945a7b52e554bcbde305049"
+  },
+  "provenance": {
+    "origin": "slope-stability-catalog",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "pmg.block-fgmres-p2",
+    "title": "P2 block FGMRES PMG"
+  },
+  "family": "pmg",
+  "policy": {
+    "enabled": true,
+    "smoother": "fgmres_block",
+    "pre_smoothing_steps": 4,
+    "post_smoothing_steps": 6,
+    "coarse_solver": "preonly_lu",
+    "coarse_direct_maximum_dofs": 50000,
+    "active_rank_policy": "adaptive",
+    "levels": [
+      1,
+      2
+    ],
+    "mechanics_matrix_free": false,
+    "matrix_free_galerkin": true,
+    "fgmres_full_iterate_post": true,
+    "coarse_factorization": "superlu_dist_reuse",
+    "shared_point_balance": "petsc",
+    "parmetis_seed": 15,
+    "base_iterations": 2,
+    "coarse_lu_fallback_to_gamg": true
+  },
+  "id": "sha256:e544f4fab4160b7274251754fb883252008bb86d7a7daf24fde9f413f1aaea74"
+}

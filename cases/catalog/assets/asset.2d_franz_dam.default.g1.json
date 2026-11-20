@@ -1,0 +1,128 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:578d9138fd44bf03d0750e6f4854a2f0d6df6f0dd186c549adbebd7a83942faf"
+  },
+  "provenance": {
+    "origin": "native:meshes/2d_franz_dam/default.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.2d_franz_dam.default.g1",
+    "title": "2d_franz_dam default G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/6277d6c0dc474dc899f39e3b73552d375f59ada59ac99b7a98ed336e5c01fc0f.msh",
+    "sha256": "6277d6c0dc474dc899f39e3b73552d375f59ada59ac99b7a98ed336e5c01fc0f"
+  },
+  "dimension": 2,
+  "cell_type": "triangle",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "default"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:head_support",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:left",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:right",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_support",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:left",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:right",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:zone_1",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_10",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_2",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_3",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_4",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_5",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_6",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_7",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_8",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:zone_9",
+      "kind": "region",
+      "dimension": 2
+    }
+  ],
+  "id": "sha256:b8c4c32fce614be5d57e47ac9f2983320700c6edcdb9c4072d1f7be69fa85fe6"
+}

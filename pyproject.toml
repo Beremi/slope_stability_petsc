@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: BSD-2-Clause
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["generators", "python"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.format]
+# Generated modules are written by slope_codegen and checked byte for byte.
+exclude = [
+  "python/src/slope_protocol/generated.py",
+  "python/src/slope_stability/_fe_layout.py",
+  "python/src/slope_stability/_solver_settings.py",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["E402"]
+"python/src/slope_protocol/generated.py" = ["E501"]

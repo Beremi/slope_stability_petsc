@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "layouts": [
+    {
+      "id": "compiled-problem-v1",
+      "groups": [
+        "/mesh/topology",
+        "/mesh/entities",
+        "/mesh/coordinates",
+        "/mesh/supports",
+        "/spaces",
+        "/materials",
+        "/fields/initial",
+        "/provenance/import_maps"
+      ],
+      "required_dataset_attributes": [
+        "layout_id",
+        "logical_shape",
+        "value_type",
+        "digest_method",
+        "digest"
+      ]
+    },
+    {
+      "id": "result-v1",
+      "groups": [
+        "/states",
+        "/fields",
+        "/quadrature",
+        "/quadrature_categories",
+        "/cell_reductions",
+        "/history",
+        "/diagnostics"
+      ],
+      "required_dataset_attributes": [
+        "quantity_id",
+        "quantity_version",
+        "unit",
+        "mesh_id",
+        "geometry_id",
+        "state_ids",
+        "completeness",
+        "value_type",
+        "digest_method",
+        "digest"
+      ]
+    },
+    {
+      "id": "checkpoint-v1",
+      "groups": [
+        "/accepted",
+        "/analysis",
+        "/coupling",
+        "/deflation",
+        "/history",
+        "/compatibility"
+      ],
+      "required_dataset_attributes": [
+        "layout_id",
+        "state_id",
+        "completeness",
+        "value_type",
+        "digest_method",
+        "digest"
+      ]
+    }
+  ],
+  "collective_call_discipline": [
+    "collective_open",
+    "deterministic_metadata_creation",
+    "collective_metadata_write",
+    "explicit_file_and_memory_selection",
+    "zero_owner_select_none",
+    "explicit_transfer_mode",
+    "reverse_order_close",
+    "collective_status_agreement"
+  ],
+  "forbidden_payloads": [
+    "petsc_object_bytes",
+    "process_local_numbering",
+    "opaque_language_serialization"
+  ]
+}
+

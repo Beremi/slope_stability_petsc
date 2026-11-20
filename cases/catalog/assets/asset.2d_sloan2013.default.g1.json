@@ -1,0 +1,88 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:f1f51c656f0bc901fe0e782287bb4cf9c1b9859d67f567768665fb9d17e6b1d4"
+  },
+  "provenance": {
+    "origin": "native:meshes/2d_sloan2013/default.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.2d_sloan2013.default.g1",
+    "title": "2d_sloan2013 default G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/f6720cb2b29e60bc4a8d19d09a2b775b0febd289cdf61c1d728ec1b8d59b21b3.msh",
+    "sha256": "f6720cb2b29e60bc4a8d19d09a2b775b0febd289cdf61c1d728ec1b8d59b21b3"
+  },
+  "dimension": 2,
+  "cell_type": "triangle",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "default"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:head_support",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:left",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "boundary:right",
+      "kind": "boundary",
+      "dimension": 1
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_support",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:left",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:right",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 2
+    },
+    {
+      "name": "region:weak_layer",
+      "kind": "region",
+      "dimension": 2
+    }
+  ],
+  "id": "sha256:8f889f94cba9adb99941f9b0dbb5eaae0cda3d69296b4ceac4ff05470561d814"
+}

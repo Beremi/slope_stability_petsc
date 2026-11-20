@@ -1,0 +1,30 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:1d5a8f079321e580e40db5975dc4d8fad473a879086ad35cc8e7db1dfcd2ae12"
+  },
+  "provenance": {
+    "origin": "slope-stability-catalog",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "validation.default",
+    "title": "Default validation"
+  },
+  "family": "validation",
+  "policy": {
+    "qualification_mode": true,
+    "reject_unused_options": true,
+    "conservation_physical_scale": 1.0,
+    "conservation_normalized_tolerance": 1e-08
+  },
+  "id": "sha256:55bcaebe90b3a6ff4425fbc5a986aa7beea43aa74f18a6d4732bc642cc8ef2f7"
+}

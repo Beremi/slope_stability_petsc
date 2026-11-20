@@ -1,0 +1,33 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:cf50588d371e865241c5b226c21d5f15e424d60146c671fad5fcbca8a0a33b5a"
+  },
+  "provenance": {
+    "origin": "native:configs/newton_profiles/indirect-regularized-it50.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "nonlinear.indirect-regularized-it50",
+    "title": "nonlinear profile indirect-regularized-it50"
+  },
+  "family": "nonlinear",
+  "policy": {
+    "method": "indirect-ssr:alg5:relative_residual",
+    "relative_tolerance": 0.0001,
+    "absolute_tolerance": 0.0001,
+    "stopping_criterion": "relative_residual",
+    "stopping_tolerance": 0.0001,
+    "regularization_minimum": 0.0001,
+    "maximum_iterations": 50
+  },
+  "id": "sha256:9844479cb3c07fccf9bda85ecfa0ebb049027b2282252f3e58f70f146a78d926"
+}

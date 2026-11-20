@@ -1,0 +1,384 @@
+{
+  "kind": "slope_stability.case",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:cabfbdd8364bd4b4400ec1e8fa769e9bb919e1833ade526601dd75dac4314bc6"
+  },
+  "provenance": {
+    "origin": "matlab:slope_stability/slope_stability_3D_hetero_seepage_SSR_comsol.m;native:benchmarks/cases/3d-heterogeneous-seepage-ssr-comsol/case.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "case.case-010",
+    "title": "3d-heterogeneous-seepage-ssr-comsol P2"
+  },
+  "asset": {
+    "name": "asset.3d_hetero_seepage_transition.transition_default.g1",
+    "variant": "transition_default"
+  },
+  "discretization": {
+    "field_order": 2,
+    "coordinate_order": 1
+  },
+  "materials": [
+    {
+      "name": "mechanics:cover_layer",
+      "support": "region:cover_layer",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 15.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 30.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 10000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.33,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 19.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 19.0,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:general_foundation",
+      "support": "region:general_foundation",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 15.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 38.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 50000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.3,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 22.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 22.0,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:slope_mass",
+      "support": "region:slope_mass",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 18.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 32.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 20000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.33,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 20.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.0,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:weak_foundation",
+      "support": "region:weak_foundation",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 10.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 35.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 50000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.3,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 21.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 21.0,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "hydraulic:cover_layer",
+      "support": "region:cover_layer",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:general_foundation",
+      "support": "region:general_foundation",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:slope_mass",
+      "support": "region:slope_mass",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:weak_foundation",
+      "support": "region:weak_foundation",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    }
+  ],
+  "physics": {
+    "mechanics": true,
+    "seepage": true,
+    "coupling": "weight_only"
+  },
+  "boundary_rules": [
+    {
+      "name": "displacement:glued_bottom:00",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:x_lock",
+      "components": [
+        "x"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "displacement:glued_bottom:01",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:base",
+      "components": [
+        "x",
+        "y",
+        "z"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "displacement:glued_bottom:02",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:z_lock",
+      "components": [
+        "z"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "head:00",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_dry",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "constant_scalar",
+      "parameters": {
+        "value": 0.0,
+        "unit": "kPa"
+      }
+    },
+    {
+      "name": "head:01",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_porous",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "hydrostatic",
+      "parameters": {
+        "reference_level": 55.0,
+        "reference_pressure": 0.0,
+        "unit_weight": 9.81,
+        "length_unit": "m",
+        "pressure_unit": "kPa"
+      }
+    },
+    {
+      "name": "head:02",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_free",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "hydrostatic",
+      "parameters": {
+        "reference_level": 35.0,
+        "reference_pressure": 0.0,
+        "unit_weight": 9.81,
+        "length_unit": "m",
+        "pressure_unit": "kPa"
+      }
+    }
+  ],
+  "analysis": {
+    "selector": "ssr.indirect_work_controlled"
+  },
+  "profiles": {
+    "continuation": "continuation.indirect-classic-residual-equilibrated",
+    "nonlinear": "nonlinear.indirect-regularized-it50",
+    "linear": "linear.pmg-deflated",
+    "pmg": "pmg.pmg-deflated-baseline",
+    "deflation": "deflation.pmg-deflated-baseline",
+    "output": "output.case-010.p2",
+    "validation": "validation.default",
+    "seepage": "seepage.darcy-tight"
+  },
+  "case_overrides": {
+    "resolution_overrides": {
+      "continuation.minimum_step": 1e-05,
+      "continuation.maximum_work": 340700000.0,
+      "continuation.scaled_slope_tolerance": 0.005
+    }
+  },
+  "required_outputs": [
+    "pore_pressure",
+    "pressure_gradient",
+    "saturation",
+    "safety_factor",
+    "continuation",
+    "displacement",
+    "strain",
+    "stress",
+    "material_branch",
+    "plastic_indicator",
+    "yield_residual",
+    "conductivity",
+    "hydraulic_ramp",
+    "hydraulic_epsilon",
+    "pressure_flux",
+    "darcy_velocity",
+    "global_flux_balance",
+    "coupled_body_force"
+  ],
+  "id": "sha256:02d5843f779b347fe14ec6514aba4d1e9530ab192523e171b5c0b805a161cd10"
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:2940468da32ceb5305fbcdee80c9952dd053b65ab0f13e1814e65973e9da135a"
+  },
+  "provenance": {
+    "origin": "native:configs/solver_profiles/pmg-deflated-matlab-dfgmres.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "deflation.pmg-deflated-matlab-dfgmres",
+    "title": "deflation profile pmg-deflated-matlab-dfgmres"
+  },
+  "family": "deflation",
+  "policy": {
+    "enabled": true,
+    "projector": "general_left_right",
+    "maximum_dimension": 48,
+    "candidate_source": "accepted_newton_and_control_directions",
+    "recycle": "accepted_steps",
+    "admission_tolerance": 0.001,
+    "pivot_tolerance": 1e-13,
+    "condition_limit": 1000000000000.0,
+    "invariant_tolerance": 1e-09,
+    "reorthogonalization_passes": 2,
+    "dense_factor": "partial_pivot_lu"
+  },
+  "id": "sha256:56efed2265a3990b7d94d94022834f100c0045feef666dcfff2a7d37f3f7fb9c"
+}

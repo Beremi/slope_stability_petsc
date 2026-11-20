@@ -1,0 +1,93 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:ea9977c413fdb07132cd4523334aeaab2920778cfcc2e80960b7a75341738c37"
+  },
+  "provenance": {
+    "origin": "native:meshes/3d_hetero_slope/adaptive_family_b_l1.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.3d_hetero_slope.adaptive_family_b_l1.g1",
+    "title": "3d_hetero_slope adaptive_family_b_l1 G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/6670214e5e4e9eb562cbd76fa03bafac8313597d3903823978a53af9585a3a1f.msh",
+    "sha256": "6670214e5e4e9eb562cbd76fa03bafac8313597d3903823978a53af9585a3a1f"
+  },
+  "dimension": 3,
+  "cell_type": "tetrahedron",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "adaptive_family_b_l1"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:slope_surface",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:x_max",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:z_min",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:x_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:z_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:cover_layer",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:general_foundation",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:weak_foundation",
+      "kind": "region",
+      "dimension": 3
+    }
+  ],
+  "id": "sha256:8c1abe1624c3c206b7ec8b19a323bac3d27df5f764553105b4d7bcbe7f849d9a"
+}

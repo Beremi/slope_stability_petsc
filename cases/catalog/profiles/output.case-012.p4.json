@@ -1,0 +1,38 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:37bd034bc6237bf5bd1c10af91e7d6947c804a7e7ffe720bed1403fdc1c7b12a"
+  },
+  "provenance": {
+    "origin": "slope-stability-catalog",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "output.case-012.p4",
+    "title": "validation output profile CASE-012 P4"
+  },
+  "family": "output",
+  "policy": {
+    "quantities": [
+      "safety_factor",
+      "continuation",
+      "displacement",
+      "strain",
+      "stress",
+      "material_branch",
+      "plastic_indicator",
+      "yield_residual"
+    ],
+    "history": true,
+    "frequency": "accepted_state"
+  },
+  "id": "sha256:d0c1c8473c3f02579182eb6ea6531882dc37abd255d5ee8239f04c4bace962e5"
+}

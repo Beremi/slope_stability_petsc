@@ -1,0 +1,44 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:fbdb8d73766ed67772df2b90934771723f66d9f3f139be854ffa7c66873aaca4"
+  },
+  "provenance": {
+    "origin": "native:configs/solver_profiles/pmg-deflated-matlab-dfgmres.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "pmg.pmg-deflated-matlab-dfgmres",
+    "title": "pmg profile pmg-deflated-matlab-dfgmres"
+  },
+  "family": "pmg",
+  "policy": {
+    "enabled": true,
+    "smoother": "chebyshev",
+    "pre_smoothing_steps": 2,
+    "post_smoothing_steps": 2,
+    "coarse_solver": "gamg",
+    "coarse_direct_maximum_dofs": 50000,
+    "active_rank_policy": "adaptive",
+    "levels": [
+      1,
+      2,
+      4
+    ],
+    "mechanics_matrix_free": false,
+    "matrix_free_galerkin": true,
+    "fgmres_full_iterate_post": false,
+    "coarse_factorization": "petsc_default",
+    "shared_point_balance": "petsc",
+    "parmetis_seed": -1
+  },
+  "id": "sha256:ccce1f8495a69f80ad6ca64ecef646595db27611cc26e338dc4335fd2153c31d"
+}

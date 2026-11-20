@@ -1,0 +1,157 @@
+{
+  "kind": "slope_stability.case",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:ec7a7fd9bf5a0ab9c4163f97c034b8b0534ab7df780ec725727e625cd386ac56"
+  },
+  "provenance": {
+    "origin": "matlab:slope_stability/slope_stability_3D_homo_SSR.m;native:benchmarks/cases/3d-homogeneous-ssr-p2/case.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "case.case-017",
+    "title": "3d-homogeneous-ssr-p2 P2"
+  },
+  "asset": {
+    "name": "asset.3d_homo_slope.adaptive_family_a_l1.g1",
+    "variant": "adaptive_family_a_l1"
+  },
+  "discretization": {
+    "field_order": 2,
+    "coordinate_order": 1
+  },
+  "materials": [
+    {
+      "name": "mechanics:slope_mass",
+      "support": "region:slope_mass",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 6.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 45.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 40000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.3,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 20.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.0,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    }
+  ],
+  "physics": {
+    "mechanics": true,
+    "seepage": false,
+    "coupling": "none"
+  },
+  "boundary_rules": [
+    {
+      "name": "displacement:glued_bottom:00",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:x_lock",
+      "components": [
+        "x"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "displacement:glued_bottom:01",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:base",
+      "components": [
+        "x",
+        "y",
+        "z"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "displacement:glued_bottom:02",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:z_lock",
+      "components": [
+        "z"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0
+        ],
+        "unit": "m"
+      }
+    }
+  ],
+  "analysis": {
+    "selector": "ssr.indirect_work_controlled"
+  },
+  "profiles": {
+    "continuation": "continuation.indirect-classic-residual-equilibrated",
+    "nonlinear": "nonlinear.indirect-regularized-it100",
+    "linear": "linear.pmg-deflated",
+    "pmg": "pmg.pmg-deflated-baseline",
+    "deflation": "deflation.pmg-deflated-baseline",
+    "output": "output.case-017.p2",
+    "validation": "validation.default"
+  },
+  "case_overrides": {
+    "resolution_overrides": {
+      "continuation.initial_factor": 0.9,
+      "continuation.minimum_step": 1e-05,
+      "continuation.maximum_work": 3000.0
+    }
+  },
+  "required_outputs": [
+    "safety_factor",
+    "continuation",
+    "displacement",
+    "strain",
+    "stress",
+    "material_branch",
+    "plastic_indicator",
+    "yield_residual"
+  ],
+  "id": "sha256:e7854416e2191391bedbe784b161e2f7978c9f9db7da08fa05ed33cd14b93a0b"
+}

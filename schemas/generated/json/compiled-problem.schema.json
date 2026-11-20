@@ -1,0 +1,167 @@
+{
+  "$id": "https://schemas.slope-stability.invalid/v1/compiled-problem.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "boundary_rules": {
+      "type": "object"
+    },
+    "coupling": {
+      "type": "object"
+    },
+    "created_by": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "tool_version",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "extensions": {
+      "propertyNames": {
+        "pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+      },
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "initial_state": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "slope_stability.compiled_problem"
+    },
+    "materials": {
+      "type": "object"
+    },
+    "mesh": {
+      "type": "object"
+    },
+    "operators": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "payloads": {
+      "type": "object"
+    },
+    "physics": {
+      "type": "object"
+    },
+    "prescribed_saturation": {
+      "additionalProperties": false,
+      "properties": {
+        "axis": {
+          "enum": [
+            0,
+            2
+          ]
+        },
+        "coordinates": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "type": "array"
+        },
+        "length_unit": {
+          "const": "m"
+        },
+        "levels": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "axis",
+        "coordinates",
+        "levels",
+        "length_unit"
+      ],
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "schema_version": {
+      "additionalProperties": false,
+      "properties": {
+        "major": {
+          "const": 1
+        },
+        "minor": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "patch": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "type": "object"
+    },
+    "spaces": {
+      "type": "object"
+    },
+    "supports": {
+      "type": "object"
+    },
+    "units": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "created_by",
+    "provenance",
+    "extensions",
+    "identity",
+    "units",
+    "mesh",
+    "spaces",
+    "supports",
+    "materials",
+    "physics",
+    "boundary_rules",
+    "initial_state",
+    "coupling",
+    "operators",
+    "outputs",
+    "payloads"
+  ],
+  "title": "slope_stability.compiled_problem",
+  "type": "object"
+}

@@ -1,0 +1,60 @@
+spack:
+  concretizer:
+    unify: when_possible
+  specs:
+  - llvm@23.1.5 +clang ~flang ~lld ~lldb
+  - petsc@3.24.2 +double +hdf5 +hypre +metis +mpi +shared ~complex ~examples ~fortran ~int64
+  - petsc@3.24.2 +double +hdf5 +hypre +metis +mpi +shared ~complex ~examples ~fortran +int64
+  packages:
+    gcc:
+      externals:
+      - spec: gcc@15.3.0 languages:='c,c++'
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc-15
+            cxx: /usr/bin/g++-15
+      - spec: gcc@16.2.1 languages:='c,c++,fortran'
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc
+            cxx: /usr/bin/g++
+            fortran: /usr/bin/gfortran
+    llvm:
+      buildable: false
+      externals:
+      - spec: llvm@23.1.5+clang~flang~lld~lldb
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/clang
+            cxx: /usr/bin/clang++
+    all:
+      providers:
+        blas: [openblas]
+        lapack: [openblas]
+        mpi: [openmpi]
+      target: [x86_64]
+    hdf5:
+      buildable: false
+      externals:
+      - spec: hdf5@2.2.0 +hl +mpi +shared ~cxx ~fortran
+        prefix: /usr
+      require: '@2.2.0 +mpi'
+    openblas:
+      buildable: false
+      externals:
+      - spec: openblas@0.3.34 +shared ~static threads=none
+        prefix: /usr
+    openmpi:
+      buildable: false
+      externals:
+      - spec: openmpi@5.0.11 +atomics +fortran fabrics=none
+        prefix: /usr
+      require: '@5.0.11'
+    hypre:
+      require: '@3.0.0'
+    petsc:
+      require: '@3.24.2 +double +hdf5 +hypre +metis +mpi +shared ~complex ~examples ~fortran'
+  view: false

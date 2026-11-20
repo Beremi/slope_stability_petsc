@@ -1,0 +1,276 @@
+{
+  "kind": "slope_stability.case_catalog",
+  "schema_version": {
+    "major": 2,
+    "minor": 0,
+    "patch": 0
+  },
+  "mesh_root": "../../meshes",
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-001-canonical.json",
+      "case_document_id": "sha256:7646177a0d820a3a890d50906dbc66e93234343d552aca54543e9568299d2e4d",
+      "asset_document": "assets/asset.2d_franz_dam.default.g1.json",
+      "asset_document_id": "sha256:b8c4c32fce614be5d57e47ac9f2983320700c6edcdb9c4072d1f7be69fa85fe6",
+      "mesh": "2d_franz_dam/default.msh",
+      "mesh_sha256": "6277d6c0dc474dc899f39e3b73552d375f59ada59ac99b7a98ed336e5c01fc0f"
+    },
+    {
+      "case_id": "CASE-002",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-002-canonical.json",
+      "case_document_id": "sha256:fa85545718a0de10479065317c9cd98db7c01cc91ef2fbacf1865c3362df234b",
+      "asset_document": "assets/asset.2d_homo_slope.h0.5.g1.json",
+      "asset_document_id": "sha256:173bc925bd5d6c1f32fe4affbc478ba5382764482a9785105507381d9931e644",
+      "mesh": "2d_homo_slope/h0.5.msh",
+      "mesh_sha256": "aba7f33bedce985e2f6658f1ad388c83250f356ca25b1a8859639525df9bb1e0"
+    },
+    {
+      "case_id": "CASE-003",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-003-canonical.json",
+      "case_document_id": "sha256:d45f783448e34d62dc6a993cc476a5e103f704bd13303a4ca9a1ce788df7a9c0",
+      "asset_document": "assets/asset.2d_homo_slope.h1.0.g1.json",
+      "asset_document_id": "sha256:048e19c7dee2a40fd77bb2e103d946c43663f1fbfa1900dd4833060626dad3af",
+      "mesh": "2d_homo_slope/h1.0.msh",
+      "mesh_sha256": "caab70d07969c85854130a57cc590eecd0ec3a464315b91aaf904295a06ff2d1"
+    },
+    {
+      "case_id": "CASE-004",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-004-canonical.json",
+      "case_document_id": "sha256:584609618f1f6211e207832aa50115718c7ea88836bce986d7ce36caa65a41b7",
+      "asset_document": "assets/asset.2d_kozinec.default.g1.json",
+      "asset_document_id": "sha256:83136f708eefae55aa5a2880368f372233002e586b849c84ba682e88f023489a",
+      "mesh": "2d_kozinec/default.msh",
+      "mesh_sha256": "ded7b23e13b9d837709fcef275543c15bd3d7e5a2f9dd2da064758e1c245a4b2"
+    },
+    {
+      "case_id": "CASE-005",
+      "variant_id": "p2",
+      "field_order": 2,
+      "case_document": "cases/CASE-005-p2.json",
+      "case_document_id": "sha256:558b4e9ac94bc0a2b8fc166976299b60bcd022b47796a7822dc555ba05148319",
+      "asset_document": "assets/asset.2d_kozinec.default.g1.json",
+      "asset_document_id": "sha256:83136f708eefae55aa5a2880368f372233002e586b849c84ba682e88f023489a",
+      "mesh": "2d_kozinec/default.msh",
+      "mesh_sha256": "ded7b23e13b9d837709fcef275543c15bd3d7e5a2f9dd2da064758e1c245a4b2"
+    },
+    {
+      "case_id": "CASE-005",
+      "variant_id": "p4",
+      "field_order": 4,
+      "case_document": "cases/CASE-005-p4.json",
+      "case_document_id": "sha256:3d3065997287d060189db61bb234f9435261c4d3ecc1082f0fa38e1e8fdf73ff",
+      "asset_document": "assets/asset.2d_kozinec.default.g1.json",
+      "asset_document_id": "sha256:83136f708eefae55aa5a2880368f372233002e586b849c84ba682e88f023489a",
+      "mesh": "2d_kozinec/default.msh",
+      "mesh_sha256": "ded7b23e13b9d837709fcef275543c15bd3d7e5a2f9dd2da064758e1c245a4b2"
+    },
+    {
+      "case_id": "CASE-006",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-006-canonical.json",
+      "case_document_id": "sha256:76d1c2f3774a25ba6190dc97ec6a43e4699c4e571438dd920011cb98fae5f2a7",
+      "asset_document": "assets/asset.2d_luzec.default.g1.json",
+      "asset_document_id": "sha256:e82131bc6aa870368089e66971e7dbabafb646d9edbd30289ac1ba6caad8d44b",
+      "mesh": "2d_luzec/default.msh",
+      "mesh_sha256": "7ed38a724d0a0ac96fc8d923d9c9d3aa779b711ef44224bfb529274b0d0eff29"
+    },
+    {
+      "case_id": "CASE-007",
+      "variant_id": "canonical",
+      "field_order": 1,
+      "case_document": "cases/CASE-007-canonical.json",
+      "case_document_id": "sha256:19f923d4c733d1c46348b91070d5ebab4f469b2e6495b320df6b68ed6f388dda",
+      "asset_document": "assets/asset.2d_sloan2013.default.g1.json",
+      "asset_document_id": "sha256:8f889f94cba9adb99941f9b0dbb5eaae0cda3d69296b4ceac4ff05470561d814",
+      "mesh": "2d_sloan2013/default.msh",
+      "mesh_sha256": "f6720cb2b29e60bc4a8d19d09a2b775b0febd289cdf61c1d728ec1b8d59b21b3"
+    },
+    {
+      "case_id": "CASE-008",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-008-canonical.json",
+      "case_document_id": "sha256:3e78c2916b0726344b957eca00c417919d453c7774388b243c447ea9f3a3f8a9",
+      "asset_document": "assets/asset.3d_hetero_slope.adaptive_family_b_l1.g1.json",
+      "asset_document_id": "sha256:8c1abe1624c3c206b7ec8b19a323bac3d27df5f764553105b4d7bcbe7f849d9a",
+      "mesh": "3d_hetero_slope/adaptive_family_b_l1.msh",
+      "mesh_sha256": "6670214e5e4e9eb562cbd76fa03bafac8313597d3903823978a53af9585a3a1f"
+    },
+    {
+      "case_id": "CASE-009",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-009-canonical.json",
+      "case_document_id": "sha256:f71b8cef6c70b939e7f89b27413e1df442146e28963f57904643db2474ee0416",
+      "asset_document": "assets/asset.3d_hetero_seepage.concave_family_b.g1.json",
+      "asset_document_id": "sha256:df640f4c5faa600680e387865dcc4d0e0ef761b308b0c7fc784c15cc9911b403",
+      "mesh": "3d_hetero_seepage/concave_family_b.msh",
+      "mesh_sha256": "68d191a3d4b9933fcf37b3d3a92e76f198e4f92485db97dcc120822432465168"
+    },
+    {
+      "case_id": "CASE-010",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-010-canonical.json",
+      "case_document_id": "sha256:02d5843f779b347fe14ec6514aba4d1e9530ab192523e171b5c0b805a161cd10",
+      "asset_document": "assets/asset.3d_hetero_seepage_transition.transition_default.g1.json",
+      "asset_document_id": "sha256:9cb4f988e07b1d9764c3d6cd869fa822b4ebd1376bfd00208d71c7dffcfd474d",
+      "mesh": "3d_hetero_seepage_transition/transition_default.msh",
+      "mesh_sha256": "68cd06dd7072ab6b0c3c494bd13d9cfed5098c2b4cae4c53d9d75be67ea86454"
+    },
+    {
+      "case_id": "CASE-011",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-011-canonical.json",
+      "case_document_id": "sha256:e7253aedff78e9c071770f23b78f317e00775775a3511dcd0893355c780c177d",
+      "asset_document": "assets/asset.3d_hetero_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:9d995c2cef0e2c175a89d954ce26e9e7862297be4c2cc65f70dffabc1892fa9b",
+      "mesh": "3d_hetero_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "08ed047a17387a5e244ee6c24050a985f519ad91a23a1c19475b4d9886d31751"
+    },
+    {
+      "case_id": "CASE-012",
+      "variant_id": "canonical",
+      "field_order": 4,
+      "case_document": "cases/CASE-012-canonical.json",
+      "case_document_id": "sha256:53c6fb6280701de88023ae86eaa9453dfd539fbdf01617b50dbafde9379a66f4",
+      "asset_document": "assets/asset.3d_hetero_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:9d995c2cef0e2c175a89d954ce26e9e7862297be4c2cc65f70dffabc1892fa9b",
+      "mesh": "3d_hetero_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "08ed047a17387a5e244ee6c24050a985f519ad91a23a1c19475b4d9886d31751"
+    },
+    {
+      "case_id": "CASE-013",
+      "variant_id": "canonical",
+      "field_order": 4,
+      "case_document": "cases/CASE-013-canonical.json",
+      "case_document_id": "sha256:391c9a79a18a4bc0e06e8162b8e4a03eb6f41fb312eaca5f142fe590ef514b66",
+      "asset_document": "assets/asset.3d_hetero_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:9d995c2cef0e2c175a89d954ce26e9e7862297be4c2cc65f70dffabc1892fa9b",
+      "mesh": "3d_hetero_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "08ed047a17387a5e244ee6c24050a985f519ad91a23a1c19475b4d9886d31751"
+    },
+    {
+      "case_id": "CASE-014",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-014-canonical.json",
+      "case_document_id": "sha256:b87fbf54f2a50d8a449a372a8c40cd9a5dcd7047129638b6ba8f1c9123989c3e",
+      "asset_document": "assets/asset.3d_homo_slope.adaptive_family_b_l1.g1.json",
+      "asset_document_id": "sha256:6c1b32db110f0bba10c091a78aeeb995ab88902ae88f0b6da08d25cb535d3bc5",
+      "mesh": "3d_homo_slope/adaptive_family_b_l1.msh",
+      "mesh_sha256": "89e598b8945e138feeb8041002727612e097979b82c2223f326b1142c7fdcd73"
+    },
+    {
+      "case_id": "CASE-015",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-015-canonical.json",
+      "case_document_id": "sha256:191dbd9dc3837ab5ee8cff0408e3df0dd9b35a2949be30840d79fd222961b7fd",
+      "asset_document": "assets/asset.3d_homo_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:6241bc37de78dfa9e7839aa263691c99ff0b24f084bef807a4a2cdcf9a762468",
+      "mesh": "3d_homo_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead"
+    },
+    {
+      "case_id": "CASE-016",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-016-canonical.json",
+      "case_document_id": "sha256:41a11d2033e1cfccea7803e02bbeb6bbf7f30f509a21862c2c14665d83284d59",
+      "asset_document": "assets/asset.3d_homo_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:6241bc37de78dfa9e7839aa263691c99ff0b24f084bef807a4a2cdcf9a762468",
+      "mesh": "3d_homo_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead"
+    },
+    {
+      "case_id": "CASE-017",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-017-canonical.json",
+      "case_document_id": "sha256:e7854416e2191391bedbe784b161e2f7978c9f9db7da08fa05ed33cd14b93a0b",
+      "asset_document": "assets/asset.3d_homo_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:6241bc37de78dfa9e7839aa263691c99ff0b24f084bef807a4a2cdcf9a762468",
+      "mesh": "3d_homo_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead"
+    },
+    {
+      "case_id": "CASE-018",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-018-canonical.json",
+      "case_document_id": "sha256:de0e0a13403917d8de3da026e63830c54b351f9f6717fd5985189b5c6f40f76c",
+      "asset_document": "assets/asset.3d_homo_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:6241bc37de78dfa9e7839aa263691c99ff0b24f084bef807a4a2cdcf9a762468",
+      "mesh": "3d_homo_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead"
+    },
+    {
+      "case_id": "CASE-019",
+      "variant_id": "canonical",
+      "field_order": 4,
+      "case_document": "cases/CASE-019-canonical.json",
+      "case_document_id": "sha256:bfe754e7ddebe3d1f0d2d968ec50ff81f5ff020ab203d2c22596175692771d2c",
+      "asset_document": "assets/asset.3d_homo_slope.adaptive_family_a_l1.g1.json",
+      "asset_document_id": "sha256:6241bc37de78dfa9e7839aa263691c99ff0b24f084bef807a4a2cdcf9a762468",
+      "mesh": "3d_homo_slope/adaptive_family_a_l1.msh",
+      "mesh_sha256": "290811aa1d1ced24bc2851e8b7d34f4d8d29fc27318e623bb63ab69db61ddead"
+    },
+    {
+      "case_id": "CASE-020",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-020-canonical.json",
+      "case_document_id": "sha256:8663f65e10af8dfa35f2f2658205f7355a538263dd89be9bc3437d8914f45aee",
+      "asset_document": "assets/asset.3d_siopt.reference_l0.g1.json",
+      "asset_document_id": "sha256:3f03aee817dcd827e218c8b3f944798d41c132e0826ef06496cfce10c3fdea5b",
+      "mesh": "3d_siopt/reference_l0.msh",
+      "mesh_sha256": "c21d6972f4d2a6c22287e023755db03c2f1bca3921e179f1602a63544d6edd18"
+    },
+    {
+      "case_id": "CASE-021",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-021-canonical.json",
+      "case_document_id": "sha256:56193174424312a278ba2dd782bb3292169a50ebc6fcb129af85f6d9e4ff9d1e",
+      "asset_document": "assets/asset.3d_siopt.reference_l0.g1.json",
+      "asset_document_id": "sha256:3f03aee817dcd827e218c8b3f944798d41c132e0826ef06496cfce10c3fdea5b",
+      "mesh": "3d_siopt/reference_l0.msh",
+      "mesh_sha256": "c21d6972f4d2a6c22287e023755db03c2f1bca3921e179f1602a63544d6edd18"
+    },
+    {
+      "case_id": "CASE-022",
+      "variant_id": "canonical",
+      "field_order": 1,
+      "case_document": "cases/CASE-022-canonical.json",
+      "case_document_id": "sha256:f273bec7816b60f9dab7c232a3528311fbe4428874a20526252d19708434944d",
+      "asset_document": "assets/asset.2d_sloan2013.default.g1.json",
+      "asset_document_id": "sha256:8f889f94cba9adb99941f9b0dbb5eaae0cda3d69296b4ceac4ff05470561d814",
+      "mesh": "2d_sloan2013/default.msh",
+      "mesh_sha256": "f6720cb2b29e60bc4a8d19d09a2b775b0febd289cdf61c1d728ec1b8d59b21b3"
+    },
+    {
+      "case_id": "CASE-023",
+      "variant_id": "canonical",
+      "field_order": 2,
+      "case_document": "cases/CASE-023-canonical.json",
+      "case_document_id": "sha256:647dbf462474fa65e2a87e50ba24016b4684ec7c548f09135cdea1341f872b23",
+      "asset_document": "assets/asset.3d_hetero_seepage.concave_family_b.g1.json",
+      "asset_document_id": "sha256:df640f4c5faa600680e387865dcc4d0e0ef761b308b0c7fc784c15cc9911b403",
+      "mesh": "3d_hetero_seepage/concave_family_b.msh",
+      "mesh_sha256": "68d191a3d4b9933fcf37b3d3a92e76f198e4f92485db97dcc120822432465168"
+    }
+  ],
+  "catalog_id": "sha256:ab8873c9c873504f04d21ace7ece09065286341511605d1547cb9cd02a8d4199"
+}

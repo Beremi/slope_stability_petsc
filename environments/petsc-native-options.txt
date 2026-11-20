@@ -1,0 +1,47 @@
+PETSc source:
+  version: 3.24.2
+  URL: https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.24.2.tar.gz
+  SHA256: 105c77cbc7361c078e013448bcad2c57ce8081377e5a8e49b3cc213f1a0a4a63
+
+Common configure arguments:
+  --with-cc=/usr/bin/mpicc
+  --with-cxx=/usr/bin/mpicxx
+  --with-fc=0
+  --with-debugging=0
+  --with-shared-libraries=1
+  --with-scalar-type=real
+  --with-precision=double
+  --with-hdf5-dir=/usr
+  --download-hypre
+  --download-metis
+  --download-parmetis
+  --download-superlu_dist
+  COPTFLAGS=-O2 -g
+  CXXOPTFLAGS=-O2 -g
+
+32-bit prefix:
+  PETSC_ARCH=arch-linux-c-opt-i32
+  --with-64-bit-indices=0
+
+64-bit prefix:
+  PETSC_ARCH=arch-linux-c-opt-i64
+  --with-64-bit-indices=1
+
+Qualified downloaded revisions:
+  HYPRE: da9f93f8d698f4caaaff35fe81655b8ad7bb91f9
+  METIS: 69fb26dd042836aa16f26fb939b540c5ca71133d
+  ParMETIS: f5e3aab04fd5fe6e09fa02f885c1c29d349f9f8b
+  SuperLU_DIST: bce5318a9141cff5840071665b6ffccfc5bbba82 (9.2.0)
+
+SuperLU_DIST provides the distributed direct solve of the coarsest PMG level
+(`pmg.coarse_solver = preonly_lu` on more than one active rank); without it
+multi-rank coarse LU fails at setup. Single-rank or redundant coarse LU and
+GAMG coarse solves do not need it.
+
+For a secondary build with threaded PETSc sparse kernels, enable
+  --with-openmp=1
+  --with-openmp-kernels=1
+Reuse the first build's packages via --with-hypre-dir, --with-metis-dir,
+--with-parmetis-dir and --with-superlu_dist-dir in place of the corresponding
+--download flags. This retains the serial HYPRE and SuperLU_DIST builds.
+Use a separate PETSC_ARCH for the threaded build. See docs/building.md.

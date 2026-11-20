@@ -1,0 +1,106 @@
+{
+  "$id": "https://schemas.slope-stability.invalid/v1/build.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "type": "object"
+    },
+    "compiler": {
+      "type": "object"
+    },
+    "created_by": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "tool_version",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "dependencies": {
+      "type": "object"
+    },
+    "extensions": {
+      "propertyNames": {
+        "pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+      },
+      "type": "object"
+    },
+    "features": {
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "slope_stability.build"
+    },
+    "licenses": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "schema_version": {
+      "additionalProperties": false,
+      "properties": {
+        "major": {
+          "const": 1
+        },
+        "minor": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "patch": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "type": "object"
+    },
+    "source": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "created_by",
+    "provenance",
+    "extensions",
+    "identity",
+    "source",
+    "compiler",
+    "dependencies",
+    "features",
+    "artifacts",
+    "licenses"
+  ],
+  "title": "slope_stability.build",
+  "type": "object"
+}

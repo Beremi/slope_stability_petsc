@@ -1,0 +1,61 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {"bom-ref": "pkg:generic/hdf5@2.2.0", "name": "hdf5", "type": "library", "version": "2.2.0"},
+    {"bom-ref": "pkg:generic/hypre@3.0.0", "name": "hypre", "type": "library", "version": "3.0.0"},
+    {"bom-ref": "pkg:generic/llvm@23.1.5", "name": "llvm", "type": "application", "version": "23.1.5"},
+    {"bom-ref": "pkg:generic/metis@5.1.0", "name": "metis", "type": "library", "version": "5.1.0"},
+    {"bom-ref": "pkg:generic/openblas@0.3.34", "name": "openblas", "type": "library", "version": "0.3.34"},
+    {"bom-ref": "pkg:generic/openmpi@5.0.11", "name": "openmpi", "type": "library", "version": "5.0.11"},
+    {"bom-ref": "pkg:generic/parmetis@4.0.3", "name": "parmetis", "type": "library", "version": "4.0.3"},
+    {"bom-ref": "pkg:generic/petsc@3.24.2", "name": "petsc", "type": "library", "version": "3.24.2"},
+    {"bom-ref": "pkg:github/ibireme/yyjson@0.12.0", "name": "yyjson", "type": "library", "version": "0.12.0"},
+    {"bom-ref": "pkg:pypi/annotated-types@0.8.0", "name": "annotated-types", "type": "library", "version": "0.8.0"},
+    {"bom-ref": "pkg:pypi/flexcache@0.3", "name": "flexcache", "type": "library", "version": "0.3"},
+    {"bom-ref": "pkg:pypi/flexparser@0.4", "name": "flexparser", "type": "library", "version": "0.4"},
+    {"bom-ref": "pkg:pypi/h5py@3.16.0", "name": "h5py", "type": "library", "version": "3.16.0"},
+    {"bom-ref": "pkg:pypi/markdown-it-py@4.2.0", "name": "markdown-it-py", "type": "library", "version": "4.2.0"},
+    {"bom-ref": "pkg:pypi/mdurl@0.1.2", "name": "mdurl", "type": "library", "version": "0.1.2"},
+    {"bom-ref": "pkg:pypi/meshio@5.3.5", "name": "meshio", "type": "library", "version": "5.3.5"},
+    {"bom-ref": "pkg:pypi/numpy@2.4.2", "name": "numpy", "type": "library", "version": "2.4.2"},
+    {"bom-ref": "pkg:pypi/pint@0.25.2", "name": "pint", "type": "library", "version": "0.25.2"},
+    {"bom-ref": "pkg:pypi/platformdirs@4.11.0", "name": "platformdirs", "type": "library", "version": "4.11.0"},
+    {"bom-ref": "pkg:pypi/pydantic@2.12.5", "name": "pydantic", "type": "library", "version": "2.12.5"},
+    {"bom-ref": "pkg:pypi/pydantic-core@2.41.5", "name": "pydantic-core", "type": "library", "version": "2.41.5"},
+    {"bom-ref": "pkg:pypi/pygments@2.20.0", "name": "pygments", "type": "library", "version": "2.20.0"},
+    {"bom-ref": "pkg:pypi/rich@15.0.0", "name": "rich", "type": "library", "version": "15.0.0"},
+    {"bom-ref": "pkg:pypi/setuptools@80.9.0", "name": "setuptools", "type": "library", "version": "80.9.0"},
+    {"bom-ref": "pkg:pypi/slope-codegen@0.1.0", "name": "slope-codegen", "type": "application", "version": "0.1.0"},
+    {"bom-ref": "pkg:pypi/slope-stability@0.1.0", "name": "slope-stability", "type": "application", "version": "0.1.0"},
+    {"bom-ref": "pkg:pypi/typing-extensions@4.16.0", "name": "typing-extensions", "type": "library", "version": "4.16.0"},
+    {"bom-ref": "pkg:pypi/typing-inspection@0.4.2", "name": "typing-inspection", "type": "library", "version": "0.4.2"}
+  ],
+  "dependencies": [
+    {"dependsOn": ["pkg:generic/hdf5@2.2.0", "pkg:generic/hypre@3.0.0", "pkg:generic/openmpi@5.0.11", "pkg:generic/parmetis@4.0.3", "pkg:generic/openblas@0.3.34"], "ref": "pkg:generic/petsc@3.24.2"},
+    {"dependsOn": [], "ref": "pkg:github/ibireme/yyjson@0.12.0"},
+    {"dependsOn": ["pkg:generic/metis@5.1.0", "pkg:generic/openmpi@5.0.11"], "ref": "pkg:generic/parmetis@4.0.3"},
+    {"dependsOn": ["pkg:pypi/typing-extensions@4.16.0"], "ref": "pkg:pypi/flexcache@0.3"},
+    {"dependsOn": ["pkg:pypi/typing-extensions@4.16.0"], "ref": "pkg:pypi/flexparser@0.4"},
+    {"dependsOn": ["pkg:pypi/numpy@2.4.2"], "ref": "pkg:pypi/h5py@3.16.0"},
+    {"dependsOn": ["pkg:pypi/mdurl@0.1.2"], "ref": "pkg:pypi/markdown-it-py@4.2.0"},
+    {"dependsOn": ["pkg:pypi/numpy@2.4.2", "pkg:pypi/rich@15.0.0"], "ref": "pkg:pypi/meshio@5.3.5"},
+    {"dependsOn": ["pkg:pypi/flexcache@0.3", "pkg:pypi/flexparser@0.4", "pkg:pypi/platformdirs@4.11.0", "pkg:pypi/typing-extensions@4.16.0"], "ref": "pkg:pypi/pint@0.25.2"},
+    {"dependsOn": ["pkg:pypi/annotated-types@0.8.0", "pkg:pypi/pydantic-core@2.41.5", "pkg:pypi/typing-extensions@4.16.0", "pkg:pypi/typing-inspection@0.4.2"], "ref": "pkg:pypi/pydantic@2.12.5"},
+    {"dependsOn": ["pkg:pypi/typing-extensions@4.16.0"], "ref": "pkg:pypi/pydantic-core@2.41.5"},
+    {"dependsOn": ["pkg:pypi/markdown-it-py@4.2.0", "pkg:pypi/pygments@2.20.0"], "ref": "pkg:pypi/rich@15.0.0"},
+    {"dependsOn": [], "ref": "pkg:pypi/slope-codegen@0.1.0"},
+    {"dependsOn": ["pkg:pypi/h5py@3.16.0", "pkg:pypi/meshio@5.3.5", "pkg:pypi/numpy@2.4.2", "pkg:pypi/pint@0.25.2", "pkg:pypi/pydantic@2.12.5"], "ref": "pkg:pypi/slope-stability@0.1.0"},
+    {"dependsOn": ["pkg:pypi/typing-extensions@4.16.0"], "ref": "pkg:pypi/typing-inspection@0.4.2"}
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "pkg:generic/slope-stability@0.1.0",
+      "name": "slope-stability",
+      "type": "application",
+      "version": "0.1.0"
+    }
+  },
+  "serialNumber": "urn:uuid:6c7fc1b9-3640-5c22-b58f-82bb26147915",
+  "specVersion": "1.6",
+  "version": 1
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:9815d22ecfe9f8044e8eed7a0a0b8635e066c610188616fe92965daeb36a2da5"
+  },
+  "provenance": {
+    "origin": "slope-stability-catalog",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "output.case-023.p2",
+    "title": "validation output profile CASE-023 P2"
+  },
+  "family": "output",
+  "policy": {
+    "quantities": [
+      "pore_pressure",
+      "pressure_gradient",
+      "saturation",
+      "safety_factor",
+      "continuation",
+      "displacement",
+      "strain",
+      "stress",
+      "material_branch",
+      "plastic_indicator",
+      "yield_residual",
+      "conductivity",
+      "hydraulic_ramp",
+      "hydraulic_epsilon",
+      "pressure_flux",
+      "darcy_velocity",
+      "global_flux_balance",
+      "coupled_body_force"
+    ],
+    "history": true,
+    "frequency": "accepted_state"
+  },
+  "id": "sha256:fe42d53ddb5807490e6374bdddbde3d9776b87b8fc7fea7888e1e6b8ffd495e3"
+}

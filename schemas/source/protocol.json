@@ -1,0 +1,478 @@
+{
+  "source_schema_version": 1,
+  "protocol_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "artifact_kinds": [
+    {
+      "kind": "slope_stability.asset",
+      "schema_file": "asset.schema.json",
+      "required_sections": [
+        "identity",
+        "mesh_source",
+        "dimension",
+        "cell_type",
+        "coordinate_order",
+        "variants",
+        "supports",
+        "provenance"
+      ],
+      "section_schemas": {
+        "identity": {
+          "type": "object"
+        },
+        "mesh_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "importer",
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "importer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "dimension": {
+          "enum": [
+            2,
+            3
+          ]
+        },
+        "cell_type": {
+          "enum": [
+            "triangle",
+            "tetrahedron"
+          ]
+        },
+        "coordinate_order": {
+          "enum": [
+            1,
+            2,
+            4
+          ]
+        },
+        "variants": {
+          "type": "array",
+          "minItems": 1
+        },
+        "supports": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "kind": "slope_stability.case",
+      "schema_file": "case.schema.json",
+      "required_sections": [
+        "identity",
+        "asset",
+        "discretization",
+        "materials",
+        "physics",
+        "boundary_rules",
+        "analysis",
+        "profiles",
+        "case_overrides",
+        "required_outputs"
+      ],
+      "section_schemas": {
+        "identity": {
+          "type": "object"
+        },
+        "asset": {
+          "type": "object"
+        },
+        "discretization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field_order",
+            "coordinate_order"
+          ],
+          "properties": {
+            "field_order": {
+              "enum": [
+                1,
+                2,
+                4,
+                8
+              ]
+            },
+            "coordinate_order": {
+              "enum": [
+                1,
+                2,
+                4
+              ]
+            },
+            "volume_quadrature": {
+              "enum": [
+                "default",
+                "paired_higher"
+              ]
+            }
+          }
+        },
+        "materials": {
+          "type": "array",
+          "minItems": 1
+        },
+        "physics": {
+          "type": "object"
+        },
+        "boundary_rules": {
+          "type": "array"
+        },
+        "analysis": {
+          "type": "object"
+        },
+        "profiles": {
+          "type": "object"
+        },
+        "case_overrides": {
+          "type": "object"
+        },
+        "required_outputs": {
+          "type": "array",
+          "minItems": 1
+        },
+        "prescribed_saturation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "axis",
+            "coordinates",
+            "levels",
+            "length_unit"
+          ],
+          "properties": {
+            "axis": {
+              "enum": [
+                "x",
+                "z"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "number"
+              }
+            },
+            "levels": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "number"
+              }
+            },
+            "length_unit": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "optional_sections": [
+        "prescribed_saturation"
+      ]
+    },
+    {
+      "kind": "slope_stability.profile",
+      "schema_file": "profile.schema.json",
+      "required_sections": [
+        "identity",
+        "family",
+        "policy"
+      ],
+      "section_schemas": {
+        "identity": {
+          "type": "object"
+        },
+        "family": {
+          "enum": [
+            "continuation",
+            "nonlinear",
+            "linear",
+            "pmg",
+            "deflation",
+            "seepage",
+            "output",
+            "validation"
+          ]
+        },
+        "policy": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "kind": "slope_stability.suite",
+      "schema_file": "suite.schema.json",
+      "required_sections": [
+        "identity",
+        "cases",
+        "profiles",
+        "axes",
+        "resources",
+        "collection"
+      ],
+      "section_schemas": {
+        "identity": {
+          "type": "object"
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 1
+        },
+        "profiles": {
+          "type": "array"
+        },
+        "axes": {
+          "type": "array"
+        },
+        "resources": {
+          "type": "array",
+          "minItems": 1
+        },
+        "collection": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "kind": "slope_stability.compiled_problem",
+      "schema_file": "compiled-problem.schema.json",
+      "required_sections": [
+        "identity",
+        "units",
+        "mesh",
+        "spaces",
+        "supports",
+        "materials",
+        "physics",
+        "boundary_rules",
+        "initial_state",
+        "coupling",
+        "operators",
+        "outputs",
+        "payloads"
+      ],
+      "optional_sections": [
+        "prescribed_saturation"
+      ],
+      "section_schemas": {
+        "prescribed_saturation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "axis",
+            "coordinates",
+            "levels",
+            "length_unit"
+          ],
+          "properties": {
+            "axis": {
+              "enum": [
+                0,
+                2
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "number"
+              }
+            },
+            "levels": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "items": {
+                "type": "number"
+              }
+            },
+            "length_unit": {
+              "const": "m"
+            }
+          }
+        }
+      }
+    },
+    {
+      "kind": "slope_stability.resolved_run",
+      "schema_file": "resolved-run.schema.json",
+      "required_sections": [
+        "identity",
+        "problem",
+        "build",
+        "analysis",
+        "continuation",
+        "nonlinear",
+        "linear",
+        "pmg",
+        "deflation",
+        "outputs",
+        "diagnostics",
+        "validation",
+        "resources",
+        "petsc_options",
+        "result_policy",
+        "resolution_trace"
+      ]
+    },
+    {
+      "kind": "slope_stability.result",
+      "schema_file": "result.schema.json",
+      "required_sections": [
+        "identity",
+        "run",
+        "terminal_status",
+        "analysis_outcome",
+        "summary",
+        "artifacts",
+        "errors"
+      ],
+      "section_schemas": {
+        "summary": {
+          "type": "object",
+          "properties": {
+            "mechanics_assembly_mode": {
+              "type": "string",
+              "enum": ["qualification", "performance"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "kind": "slope_stability.checkpoint",
+      "schema_file": "checkpoint.schema.json",
+      "required_sections": [
+        "identity",
+        "run",
+        "accepted_state",
+        "compatibility",
+        "payloads"
+      ]
+    },
+    {
+      "kind": "slope_stability.error",
+      "schema_file": "error.schema.json",
+      "required_sections": [
+        "identity",
+        "code",
+        "category",
+        "phase",
+        "operation",
+        "severity",
+        "message",
+        "causes",
+        "diagnostic_artifacts"
+      ]
+    },
+    {
+      "kind": "slope_stability.build",
+      "schema_file": "build.schema.json",
+      "required_sections": [
+        "identity",
+        "source",
+        "compiler",
+        "dependencies",
+        "features",
+        "artifacts",
+        "licenses"
+      ]
+    },
+    {
+      "kind": "slope_stability.events",
+      "schema_file": "events.schema.json",
+      "required_sections": [
+        "identity",
+        "run",
+        "stages",
+        "events",
+        "rank_summary",
+        "thread_summary"
+      ]
+    }
+  ],
+  "common_envelope": {
+    "required": [
+      "kind",
+      "schema_version",
+      "id",
+      "created_by",
+      "provenance",
+      "extensions"
+    ],
+    "id_pattern": "^sha256:[0-9a-f]{64}$",
+    "extension_key_pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+  },
+  "enums": {
+    "dimension": [
+      2,
+      3
+    ],
+    "cell": [
+      "triangle",
+      "tetrahedron"
+    ],
+    "polynomial_order": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "analysis": [
+      "limit_load.work_controlled",
+      "ssr.direct_potential",
+      "ssr.indirect_work_controlled",
+      "seepage.steady_unconfined"
+    ],
+    "terminal_status": [
+      "succeeded",
+      "failed_preflight",
+      "failed_setup",
+      "failed_numerical",
+      "cancelled",
+      "interrupted"
+    ]
+  },
+  "compatibility": {
+    "supported_major": 1,
+    "minimum_minor": 0,
+    "maximum_minor": 0,
+    "patch_is_compatible": true,
+    "unknown_namespaced_extensions_preserved": true,
+    "unknown_fields_outside_extensions_rejected": true
+  },
+  "forbidden_public_keys": [
+    "petsc_point_id",
+    "petsc_dof_id",
+    "rank_local_id",
+    "python_callable",
+    "module_path",
+    "shared_library",
+    "source_snippet"
+  ]
+}

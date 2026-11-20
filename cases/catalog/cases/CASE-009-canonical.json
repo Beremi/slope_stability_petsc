@@ -1,0 +1,174 @@
+{
+  "kind": "slope_stability.case",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:b6886977818e826a937133dabdc878726965b24df06d33521f140c863a5691b9"
+  },
+  "provenance": {
+    "origin": "matlab:slope_stability/slope_stability_3D_hetero_seepage_SSR.m;native:benchmarks/cases/3d-heterogeneous-seepage/case.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "case.case-009",
+    "title": "3d-heterogeneous-seepage P2"
+  },
+  "asset": {
+    "name": "asset.3d_hetero_seepage.concave_family_b.g1",
+    "variant": "concave_family_b"
+  },
+  "discretization": {
+    "field_order": 2,
+    "coordinate_order": 1
+  },
+  "materials": [
+    {
+      "name": "hydraulic:cover_layer",
+      "support": "region:cover_layer",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:general_foundation",
+      "support": "region:general_foundation",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:slope_mass",
+      "support": "region:slope_mass",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:weak_foundation",
+      "support": "region:weak_foundation",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    }
+  ],
+  "physics": {
+    "mechanics": false,
+    "seepage": true,
+    "coupling": "none"
+  },
+  "boundary_rules": [
+    {
+      "name": "head:00",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_dry",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "constant_scalar",
+      "parameters": {
+        "value": 0.0,
+        "unit": "kPa"
+      }
+    },
+    {
+      "name": "head:01",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_porous",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "hydrostatic",
+      "parameters": {
+        "reference_level": 55.0,
+        "reference_pressure": 0.0,
+        "unit_weight": 9.81,
+        "length_unit": "m",
+        "pressure_unit": "kPa"
+      }
+    },
+    {
+      "name": "head:02",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_free",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "hydrostatic",
+      "parameters": {
+        "reference_level": 35.0,
+        "reference_pressure": 0.0,
+        "unit_weight": 9.81,
+        "length_unit": "m",
+        "pressure_unit": "kPa"
+      }
+    }
+  ],
+  "analysis": {
+    "selector": "seepage.steady_unconfined"
+  },
+  "profiles": {
+    "continuation": "continuation.indirect-classic",
+    "nonlinear": "nonlinear.indirect-regularized-it50",
+    "linear": "linear.pmg-deflated",
+    "pmg": "pmg.pmg-deflated-baseline",
+    "deflation": "deflation.pmg-deflated-baseline",
+    "output": "output.case-009.p2",
+    "validation": "validation.default",
+    "seepage": "seepage.darcy-tight"
+  },
+  "case_overrides": {},
+  "required_outputs": [
+    "pore_pressure",
+    "pressure_gradient",
+    "saturation",
+    "global_flux_balance",
+    "nonlinear_history",
+    "conductivity",
+    "hydraulic_ramp",
+    "hydraulic_epsilon",
+    "pressure_flux",
+    "darcy_velocity"
+  ],
+  "id": "sha256:f71b8cef6c70b939e7f89b27413e1df442146e28963f57904643db2474ee0416"
+}

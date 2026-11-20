@@ -1,0 +1,393 @@
+{
+  "kind": "slope_stability.case",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:b5ba6d8253409a895065809a6d29614acd0de393d934246f8f45a6bfe7c0d674"
+  },
+  "provenance": {
+    "origin": "matlab:slope_stability/slope_stability_2D_Kozinec_SSR.m;native:benchmarks/cases/2d-kozinec-ssr/case.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "case.case-005-p2",
+    "title": "2d-kozinec-ssr P2"
+  },
+  "asset": {
+    "name": "asset.2d_kozinec.default.g1",
+    "variant": "default"
+  },
+  "discretization": {
+    "field_order": 2,
+    "coordinate_order": 1
+  },
+  "materials": [
+    {
+      "name": "mechanics:subdomain_1",
+      "support": "region:subdomain_1",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 9.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 26.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 20.3,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.7,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:subdomain_2",
+      "support": "region:subdomain_2",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 2.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 33.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 19.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.5,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:subdomain_3",
+      "support": "region:subdomain_3",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 5.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 27.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 19.4,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 21.4,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:subdomain_4",
+      "support": "region:subdomain_4",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 3.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 13.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 20.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.5,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:subdomain_5",
+      "support": "region:subdomain_5",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 5.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 27.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 19.4,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 21.4,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:subdomain_6",
+      "support": "region:subdomain_6",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 3.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 13.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 20.0,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.5,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    },
+    {
+      "name": "mechanics:subdomain_7",
+      "support": "region:subdomain_7",
+      "model": "mohr_coulomb",
+      "parameters": {
+        "cohesion": {
+          "value": 1.0,
+          "unit": "kPa"
+        },
+        "friction_angle": {
+          "value": 45.0,
+          "unit": "degree"
+        },
+        "dilation_angle": {
+          "value": 0.0,
+          "unit": "degree"
+        },
+        "young_modulus": {
+          "value": 16000.0,
+          "unit": "kPa"
+        },
+        "poisson_ratio": {
+          "value": 0.4,
+          "unit": "1"
+        },
+        "saturated_unit_weight": {
+          "value": 20.5,
+          "unit": "kN/m^3"
+        },
+        "unsaturated_unit_weight": {
+          "value": 20.6,
+          "unit": "kN/m^3"
+        },
+        "davis": "B"
+      }
+    }
+  ],
+  "physics": {
+    "mechanics": true,
+    "seepage": false,
+    "coupling": "none"
+  },
+  "boundary_rules": [
+    {
+      "name": "displacement:default:00",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:left",
+      "components": [
+        "x"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "displacement:default:01",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:right",
+      "components": [
+        "x"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0
+        ],
+        "unit": "m"
+      }
+    },
+    {
+      "name": "displacement:default:02",
+      "field": "displacement",
+      "condition": "essential",
+      "support": "nodeset:base",
+      "components": [
+        "x",
+        "y"
+      ],
+      "value_model": "constant_vector",
+      "parameters": {
+        "value": [
+          0.0,
+          0.0
+        ],
+        "unit": "m"
+      }
+    }
+  ],
+  "analysis": {
+    "selector": "ssr.indirect_work_controlled"
+  },
+  "profiles": {
+    "continuation": "continuation.indirect-classic-residual-equilibrated",
+    "nonlinear": "nonlinear.indirect-regularized-it50",
+    "linear": "linear.pmg-deflated",
+    "pmg": "pmg.pmg-deflated-baseline",
+    "deflation": "deflation.pmg-deflated-baseline",
+    "output": "output.case-005.p2",
+    "validation": "validation.default"
+  },
+  "case_overrides": {
+    "resolution_overrides": {
+      "continuation.initial_factor": 0.7,
+      "continuation.minimum_step": 1e-05,
+      "continuation.maximum_work": 70000000.0
+    }
+  },
+  "required_outputs": [
+    "safety_factor",
+    "continuation",
+    "displacement",
+    "strain",
+    "stress",
+    "material_branch",
+    "plastic_indicator",
+    "yield_residual"
+  ],
+  "prescribed_saturation": {
+    "axis": "x",
+    "coordinates": [
+      0.0,
+      44.0,
+      116.0,
+      149.0,
+      165.0,
+      194.0,
+      232.0
+    ],
+    "levels": [
+      59.0,
+      55.0,
+      39.0,
+      32.0,
+      27.0,
+      24.0,
+      20.0
+    ],
+    "length_unit": "m"
+  },
+  "id": "sha256:558b4e9ac94bc0a2b8fc166976299b60bcd022b47796a7822dc555ba05148319"
+}

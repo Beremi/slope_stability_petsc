@@ -1,0 +1,37 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:e58ed37245a7ab1b5f6aa261bd1a37244c918c14544c77e9529a8eb95454b4bb"
+  },
+  "provenance": {
+    "origin": "native:configs/solver_profiles/pmg-deflated-baseline.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "deflation.pmg-deflated-baseline",
+    "title": "deflation profile pmg-deflated-baseline"
+  },
+  "family": "deflation",
+  "policy": {
+    "enabled": true,
+    "projector": "general_left_right",
+    "maximum_dimension": 48,
+    "candidate_source": "accepted_newton_and_control_directions",
+    "recycle": "accepted_steps",
+    "admission_tolerance": 0.001,
+    "pivot_tolerance": 1e-13,
+    "condition_limit": 1000000000000.0,
+    "invariant_tolerance": 1e-09,
+    "reorthogonalization_passes": 2,
+    "dense_factor": "partial_pivot_lu"
+  },
+  "id": "sha256:3d17cfed52eef6e7a60f230a9810c92cff8ce2f3ed87cd248113130fa2e96cd5"
+}

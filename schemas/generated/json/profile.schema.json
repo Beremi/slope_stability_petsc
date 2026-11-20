@@ -1,0 +1,458 @@
+{
+  "$id": "https://schemas.slope-stability.invalid/v1/profile.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "continuation"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "policy": {
+            "properties": {
+              "consecutive_retry_limit": {
+                "default": 5,
+                "description": "Maximum consecutive rejected attempts before continuation stops.",
+                "maximum": 5,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "maximum_accepted_states": {
+                "maximum": 128,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "work_growth_iteration_limit": {
+                "default": 0,
+                "description": "Newton effort gate. A value of 0 leaves classic unrestricted and derives five sixths of the Newton limit for adaptive modes.",
+                "maximum": 2147483647,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "work_predictor_error_target": {
+                "default": 1.0,
+                "description": "Dimensionless predictor error target for adaptive work stepping.",
+                "maximum": 1.7976931348623157e+308,
+                "minimum": 2.2250738585072014e-308,
+                "type": "number"
+              },
+              "work_step_controller": {
+                "default": "classic",
+                "description": "Select the indirect work-step growth and retry controller.",
+                "enum": [
+                  "classic",
+                  "predictor_error",
+                  "work_efficiency"
+                ],
+                "type": "string"
+              },
+              "work_step_scale_maximum": {
+                "default": 2.0,
+                "description": "Upper multiplicative bound on adaptive work-step updates.",
+                "maximum": 1.7976931348623157e+308,
+                "minimum": 1.0,
+                "type": "number"
+              },
+              "work_step_scale_minimum": {
+                "default": 0.5,
+                "description": "Lower multiplicative bound on adaptive work-step updates.",
+                "maximum": 1.0,
+                "minimum": 2.2250738585072014e-308,
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "nonlinear"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "policy": {
+            "properties": {
+              "allow_relaxed": {
+                "default": false,
+                "description": "Allow explicitly labelled relaxed Newton acceptance.",
+                "type": "boolean"
+              },
+              "fixed_line_search": {
+                "default": "directional",
+                "description": "Choose the line search for fixed-factor mechanics Newton solves.",
+                "enum": [
+                  "directional",
+                  "residual_monotone"
+                ],
+                "type": "string"
+              },
+              "indirect_adaptive_linear_alpha_threshold": {
+                "default": 0.1,
+                "description": "Line-search alpha below which the adaptive linear tolerance may tighten.",
+                "maximum": 1.0,
+                "minimum": 2.2250738585072014e-308,
+                "type": "number"
+              },
+              "indirect_adaptive_linear_iteration_threshold": {
+                "default": 2,
+                "description": "Maximum previous inner iteration count that permits tolerance tightening.",
+                "maximum": 2147483647,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "indirect_adaptive_linear_minimum_relative_tolerance": {
+                "default": 0.0001,
+                "description": "Floor for the indirect adaptive linear relative tolerance.",
+                "maximum": 1.0,
+                "minimum": 2.2250738585072014e-308,
+                "type": "number"
+              },
+              "indirect_adaptive_linear_tightening_factor": {
+                "default": 0.5,
+                "description": "Multiplier for tightening a linear relative tolerance.",
+                "maximum": 0.9999999999999999,
+                "minimum": 2.2250738585072014e-308,
+                "type": "number"
+              },
+              "indirect_adaptive_linear_tolerance": {
+                "default": false,
+                "description": "Tighten subsequent indirect linear solves when Newton damping triggers the forcing policy.",
+                "type": "boolean"
+              },
+              "indirect_legacy_alg5_line_search": {
+                "default": false,
+                "description": "Use the reference directional ALG5 line search during indirect SSR.",
+                "type": "boolean"
+              },
+              "indirect_progress_guard": {
+                "default": "off",
+                "description": "Disable, enforce, learn, or observe the indirect Newton progress guard.",
+                "enum": [
+                  "off",
+                  "fixed",
+                  "adaptive",
+                  "observe"
+                ],
+                "type": "string"
+              },
+              "indirect_progress_guard_iteration": {
+                "default": 4,
+                "description": "Zero-based Newton correction at which an enabled progress guard samples.",
+                "maximum": 255,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "indirect_progress_guard_maximum": {
+                "default": 0.0,
+                "description": "Positive relative residual ceiling for the fixed progress guard.",
+                "maximum": 1.7976931348623157e+308,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              "indirect_sensitivity": {
+                "default": "reference_forward",
+                "description": "Choose the finite-difference sensitivity in work-controlled SSR.",
+                "enum": [
+                  "reference_forward",
+                  "stable_central"
+                ],
+                "type": "string"
+              },
+              "indirect_sensitivity_step": {
+                "default": 0.0,
+                "description": "Relative central-difference step. A value of 0 selects the cube root of machine epsilon.",
+                "maximum": 0.1,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              "maximum_line_search_trials": {
+                "default": 24,
+                "description": "Line-search trial budget per Newton correction. Directional search allows up to 62 and also evaluates two endpoints.",
+                "maximum": 64,
+                "minimum": 1,
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "linear"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "policy": {
+            "properties": {
+              "initial_guess": {
+                "default": "coarse_only",
+                "description": "Choose the mechanics FGMRES initial complementary correction.",
+                "enum": [
+                  "coarse_only",
+                  "previous_complement",
+                  "previous_complement_if_better"
+                ],
+                "type": "string"
+              },
+              "orthogonalization": {
+                "default": "petsc",
+                "description": "Choose outer mechanics FGMRES orthogonalization and CGS refinement.",
+                "enum": [
+                  "petsc",
+                  "cgs_refine_always",
+                  "cgs_unrefined",
+                  "mgs"
+                ],
+                "type": "string"
+              },
+              "use_mdot_gemv": {
+                "default": false,
+                "description": "Request PETSc's GEMV implementation of batched vector dot products.",
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "pmg"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "policy": {
+            "properties": {
+              "coarse_factorization": {
+                "default": "petsc_default",
+                "description": "Configure the distributed SuperLU_DIST base factorization when selected.",
+                "enum": [
+                  "petsc_default",
+                  "superlu_dist_reuse"
+                ],
+                "type": "string"
+              },
+              "coarse_lu_fallback_to_gamg": {
+                "default": false,
+                "description": "Use FGMRES/GAMG when distributed coarse LU is requested and the PETSc build lacks SuperLU_DIST.",
+                "type": "boolean"
+              },
+              "fgmres_full_iterate_post": {
+                "default": false,
+                "description": "Apply post-FGMRES to the full iterate, starting from the coarse-corrected state.",
+                "type": "boolean"
+              },
+              "matrix_free_batch_cells": {
+                "default": 0,
+                "description": "Matrix-free fine-level action batch size. A value of 0 selects the order-specific kernel default.",
+                "maximum": 32,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "matrix_free_block_nodes": {
+                "default": 1,
+                "description": "Maximum entity nodes per matrix-free fine-level block.",
+                "maximum": 35,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "matrix_free_galerkin": {
+                "default": true,
+                "description": "Use Galerkin shell actions above P1 when mechanics is matrix-free.",
+                "type": "boolean"
+              },
+              "mechanics_matrix_free": {
+                "default": false,
+                "description": "Apply high-order mechanics tangents without assembling the full matrix.",
+                "type": "boolean"
+              },
+              "parmetis_seed": {
+                "default": -1,
+                "description": "Select ParMETIS with this seed. A value of -1 leaves PETSc partitioner selection in effect.",
+                "maximum": 2147483647,
+                "minimum": -1,
+                "type": "integer"
+              },
+              "shared_point_balance": {
+                "default": "petsc",
+                "description": "Choose how shared vertices, edges and high-order facets are owned after partitioning.",
+                "enum": [
+                  "petsc",
+                  "stable_hash_p2",
+                  "stable_hash_high_order"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "output"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "policy": {
+            "properties": {
+              "krylov_history_limit": {
+                "default": 0,
+                "description": "Maximum detailed Krylov residual rows per run. A value of 0 disables the detail.",
+                "maximum": 1000000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "pmg_apply_history_limit": {
+                "default": 0,
+                "description": "Maximum detailed PMG application rows per run. A value of 0 disables the detail.",
+                "maximum": 1000000,
+                "minimum": 0,
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "validation"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "policy": {
+            "properties": {
+              "qualification_mode": {
+                "default": false,
+                "description": "Use fixed-order assembly and operator actions for mechanics and its PMG levels.",
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "created_by": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "tool_version",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "extensions": {
+      "propertyNames": {
+        "pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+      },
+      "type": "object"
+    },
+    "family": {
+      "enum": [
+        "continuation",
+        "nonlinear",
+        "linear",
+        "pmg",
+        "deflation",
+        "seepage",
+        "output",
+        "validation"
+      ]
+    },
+    "id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "slope_stability.profile"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "schema_version": {
+      "additionalProperties": false,
+      "properties": {
+        "major": {
+          "const": 1
+        },
+        "minor": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "patch": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "created_by",
+    "provenance",
+    "extensions",
+    "identity",
+    "family",
+    "policy"
+  ],
+  "title": "slope_stability.profile",
+  "type": "object"
+}

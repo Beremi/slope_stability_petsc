@@ -1,0 +1,38 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:68bbc22a4f3124a0b14be2d87145e8d18f5991aecccd667e535e36de8e78b37d"
+  },
+  "provenance": {
+    "origin": "native:configs/continuation_profiles/direct-limit-load.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "continuation.direct-limit-load",
+    "title": "continuation profile direct-limit-load"
+  },
+  "family": "continuation",
+  "policy": {
+    "method": "direct",
+    "initial_factor": 1.0,
+    "initial_step": 0.1,
+    "minimum_step": 0.001,
+    "maximum_step": 0.1,
+    "maximum_work": 1e+300,
+    "initial_work_scale": 0.2,
+    "scaled_slope_tolerance": 0.001,
+    "factor_increment_stop": 0.001,
+    "maximum_accepted_states": 100,
+    "initial_nonlinear_stopping_criterion": "relative_correction",
+    "initial_nonlinear_stopping_tolerance": 0.001
+  },
+  "id": "sha256:ace461cdb41524f9eb459475dd0ad396639486e50fef7afd983ee892855ca3d2"
+}

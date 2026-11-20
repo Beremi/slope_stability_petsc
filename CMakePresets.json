@@ -1,0 +1,169 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 31,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "$env{SLOPE_BUILD_ROOT}/${presetName}",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_INSTALL_PREFIX": "$env{SLOPE_INSTALL_ROOT}/${presetName}",
+        "Python3_EXECUTABLE": "$env{SLOPE_PYTHON}",
+        "SLOPE_BUILD_PROFILE": "${presetName}",
+        "SLOPE_PROTOCOL_ONLY": "OFF",
+        "SLOPE_SANITIZER": "none"
+      }
+    },
+    {
+      "name": "release-mpi-i32",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "SLOPE_ENABLE_OPENMP": "OFF",
+        "SLOPE_PETSC_INDEX_BITS": "32"
+      }
+    },
+    {
+      "name": "release-hybrid-i32",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "SLOPE_ENABLE_OPENMP": "ON",
+        "SLOPE_PETSC_INDEX_BITS": "32"
+      }
+    },
+    {
+      "name": "release-mpi-i64",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "SLOPE_ENABLE_OPENMP": "OFF",
+        "SLOPE_PETSC_INDEX_BITS": "64"
+      }
+    },
+    {
+      "name": "release-hybrid-i64",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "SLOPE_ENABLE_OPENMP": "ON",
+        "SLOPE_PETSC_INDEX_BITS": "64"
+      }
+    },
+    {
+      "name": "relwithdebinfo-hybrid",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "SLOPE_ENABLE_OPENMP": "ON",
+        "SLOPE_PETSC_INDEX_BITS": "32"
+      }
+    },
+    {
+      "name": "debug-mpi",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SLOPE_ENABLE_OPENMP": "OFF",
+        "SLOPE_PETSC_INDEX_BITS": "32"
+      }
+    },
+    {
+      "name": "debug-hybrid",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SLOPE_ENABLE_OPENMP": "ON",
+        "SLOPE_PETSC_INDEX_BITS": "32"
+      }
+    },
+    {
+      "name": "asan-ubsan",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SLOPE_ENABLE_OPENMP": "ON",
+        "SLOPE_PETSC_INDEX_BITS": "32",
+        "SLOPE_SANITIZER": "address-undefined"
+      }
+    },
+    {
+      "name": "tsan-kernels",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SLOPE_ENABLE_OPENMP": "ON",
+        "SLOPE_PETSC_INDEX_BITS": "32",
+        "SLOPE_SANITIZER": "thread",
+        "SLOPE_TSAN_KERNELS_ONLY": "ON"
+      }
+    },
+    {
+      "name": "coverage",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SLOPE_ENABLE_COVERAGE": "ON",
+        "SLOPE_ENABLE_OPENMP": "OFF",
+        "SLOPE_PETSC_INDEX_BITS": "32"
+      }
+    }
+  ],
+  "buildPresets": [
+    {"name": "release-mpi-i32", "configurePreset": "release-mpi-i32"},
+    {"name": "release-hybrid-i32", "configurePreset": "release-hybrid-i32"},
+    {"name": "release-mpi-i64", "configurePreset": "release-mpi-i64"},
+    {"name": "release-hybrid-i64", "configurePreset": "release-hybrid-i64"},
+    {"name": "relwithdebinfo-hybrid", "configurePreset": "relwithdebinfo-hybrid"},
+    {"name": "debug-mpi", "configurePreset": "debug-mpi"},
+    {"name": "debug-hybrid", "configurePreset": "debug-hybrid"},
+    {"name": "asan-ubsan", "configurePreset": "asan-ubsan"},
+    {"name": "tsan-kernels", "configurePreset": "tsan-kernels"},
+    {"name": "coverage", "configurePreset": "coverage"}
+  ],
+  "testPresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "output": {"outputOnFailure": true},
+      "execution": {"noTestsAction": "error"}
+    },
+    {"name": "release-mpi-i32", "inherits": "base", "configurePreset": "release-mpi-i32"},
+    {"name": "release-hybrid-i32", "inherits": "base", "configurePreset": "release-hybrid-i32"},
+    {"name": "release-mpi-i64", "inherits": "base", "configurePreset": "release-mpi-i64"},
+    {"name": "release-hybrid-i64", "inherits": "base", "configurePreset": "release-hybrid-i64"},
+    {"name": "relwithdebinfo-hybrid", "inherits": "base", "configurePreset": "relwithdebinfo-hybrid"},
+    {"name": "debug-mpi", "inherits": "base", "configurePreset": "debug-mpi"},
+    {"name": "debug-hybrid", "inherits": "base", "configurePreset": "debug-hybrid"},
+    {
+      "name": "asan-ubsan",
+      "inherits": "base",
+      "configurePreset": "asan-ubsan",
+      "environment": {
+        "OMPI_MCA_memory": "^patcher",
+        "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1:fast_unwind_on_malloc=0",
+        "LSAN_OPTIONS": "suppressions=${sourceDir}/tests/native/lsan.supp",
+        "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+      }
+    },
+    {
+      "name": "tsan-kernels",
+      "inherits": "base",
+      "configurePreset": "tsan-kernels",
+      "environment": {
+        "OMPI_MCA_memory": "^patcher",
+        "PMIX_MCA_gds": "hash",
+        "TSAN_OPTIONS": "ignore_noninstrumented_modules=1:halt_on_error=1"
+      }
+    },
+    {"name": "coverage", "inherits": "base", "configurePreset": "coverage"}
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "$id": "https://schemas.slope-stability.invalid/v1/suite.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "axes": {
+      "type": "array"
+    },
+    "cases": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "collection": {
+      "type": "object"
+    },
+    "created_by": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "tool_version",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "extensions": {
+      "propertyNames": {
+        "pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+      },
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "slope_stability.suite"
+    },
+    "profiles": {
+      "type": "array"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "resources": {
+      "items": {
+        "properties": {
+          "address_space_per_rank_mib": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "hydraulic_pmg_memory_cap_mib": {
+            "default": 2048,
+            "description": "Aggregate seepage PMG storage cap in MiB.",
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "linear_vector_memory_cap_mib": {
+            "default": 1024,
+            "description": "Aggregate Krylov and deflation vector cap in MiB for either field.",
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "mechanics_pmg_memory_cap_mib": {
+            "default": 2048,
+            "description": "Aggregate mechanics PMG storage cap in MiB.",
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "memory_per_node_mib": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "operator_workspace_mib": {
+            "default": 1024,
+            "description": "Rank-local mechanics operator workspace cap in MiB.",
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_version": {
+      "additionalProperties": false,
+      "properties": {
+        "major": {
+          "const": 1
+        },
+        "minor": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "patch": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "created_by",
+    "provenance",
+    "extensions",
+    "identity",
+    "cases",
+    "profiles",
+    "axes",
+    "resources",
+    "collection"
+  ],
+  "title": "slope_stability.suite",
+  "type": "object"
+}

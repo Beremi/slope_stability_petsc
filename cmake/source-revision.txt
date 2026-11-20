@@ -1,0 +1,4 @@
+# Filled in by `git archive` (export-subst); read by cmake/BuildManifest.cmake
+# when the source tree is not a Git checkout.
+revision: $Format:%H$
+describe: $Format:%(describe:tags=true)$

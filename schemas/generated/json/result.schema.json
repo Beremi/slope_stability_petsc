@@ -1,0 +1,115 @@
+{
+  "$id": "https://schemas.slope-stability.invalid/v1/result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analysis_outcome": {
+      "type": "object"
+    },
+    "artifacts": {
+      "type": "object"
+    },
+    "created_by": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "tool_version",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "errors": {
+      "type": "object"
+    },
+    "extensions": {
+      "propertyNames": {
+        "pattern": "^(org|com|net|io)\\.[a-z0-9.-]+$"
+      },
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "identity": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "slope_stability.result"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "run": {
+      "type": "object"
+    },
+    "schema_version": {
+      "additionalProperties": false,
+      "properties": {
+        "major": {
+          "const": 1
+        },
+        "minor": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "patch": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "type": "object"
+    },
+    "summary": {
+      "properties": {
+        "mechanics_assembly_mode": {
+          "enum": [
+            "qualification",
+            "performance"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "terminal_status": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "id",
+    "created_by",
+    "provenance",
+    "extensions",
+    "identity",
+    "run",
+    "terminal_status",
+    "analysis_outcome",
+    "summary",
+    "artifacts",
+    "errors"
+  ],
+  "title": "slope_stability.result",
+  "type": "object"
+}

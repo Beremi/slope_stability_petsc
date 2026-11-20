@@ -1,0 +1,36 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:e7aadccbeb568c5619674b44f927ff7ea5bf27162deadda6bf8b0161dcdf5b1a"
+  },
+  "provenance": {
+    "origin": "slope-stability-catalog",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "linear.pmg-deflated",
+    "title": "Deflated FGMRES with p-multigrid"
+  },
+  "family": "linear",
+  "policy": {
+    "ksp_type": "fgmres",
+    "operator_class": "nonsymmetric",
+    "relative_tolerance": 0.01,
+    "absolute_tolerance": 1e-50,
+    "maximum_iterations": 800,
+    "restart": 30,
+    "expert_options": {},
+    "initial_guess": "coarse_only",
+    "orthogonalization": "petsc",
+    "use_mdot_gemv": false
+  },
+  "id": "sha256:fa65df0fb70ef4ecb9f48d0ed5ef1ad4059f67fdba4911964d9e015617567e20"
+}

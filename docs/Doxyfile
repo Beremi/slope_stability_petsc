@@ -1,0 +1,47 @@
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Doxygen configuration for the private native interface in include/.
+#
+# Run from the repository root with an output directory outside the tree:
+#
+#   SLOPE_DOXYGEN_OUTPUT=$WORK/doxygen doxygen docs/Doxyfile
+#
+# Every function, type, member, enumeration and macro must be documented;
+# a warning fails the run. HTML is written to $SLOPE_DOXYGEN_OUTPUT/html.
+
+PROJECT_NAME           = slope-stability
+PROJECT_BRIEF          = "Native engine interface"
+OUTPUT_DIRECTORY       = $(SLOPE_DOXYGEN_OUTPUT)
+INPUT                  = include
+FILE_PATTERNS          = *.h
+RECURSIVE              = YES
+STRIP_FROM_PATH        = include
+STRIP_FROM_INC_PATH    = include
+FULL_PATH_NAMES        = YES
+
+OPTIMIZE_OUTPUT_FOR_C  = YES
+JAVADOC_AUTOBRIEF      = YES
+MARKDOWN_SUPPORT       = YES
+TYPEDEF_HIDES_STRUCT   = YES
+EXTRACT_ALL            = NO
+EXTRACT_STATIC         = YES
+EXTRACT_PRIVATE        = NO
+SORT_MEMBER_DOCS       = NO
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+SEARCH_INCLUDES        = NO
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_IF_INCOMPLETE_DOC = YES
+WARN_NO_PARAMDOC       = YES
+WARN_AS_ERROR          = FAIL_ON_WARNINGS_PRINT
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+GENERATE_XML           = NO
+HAVE_DOT               = NO

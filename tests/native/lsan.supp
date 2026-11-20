@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: BSD-2-Clause
+# Open MPI 5.0.11 retains process-lifetime operation tables (ompi_op_init),
+# MCA registration strings (opal_asprintf, mca_base_var_register), and TCP
+# peer metadata (mca_btl_tcp_proc_create) after MPI_Finalize.
+leak:libmpi.so
+leak:libopen-pal.so
+
+# PMIx retains GDS shmem2 value copies (pmix_hash_fetch) and its runtime
+# pointer arrays (pmix_pointer_array_init) after PMIx_Finalize.
+leak:libpmix.so

@@ -1,0 +1,9 @@
+{
+  "z": 0,
+  "a": "slope",
+  "nested": {
+    "b": true,
+    "a": null
+  }
+}
+

@@ -1,0 +1,909 @@
+{
+  "schema_version": 1,
+  "orders": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "gauss_legendre_unit_interval": {
+    "5": {
+      "points": [
+        0.04691007703066802,
+        0.23076534494715845,
+        0.5,
+        0.7692346550528415,
+        0.9530899229693319
+      ],
+      "weights": [
+        0.11846344252809454,
+        0.23931433524968324,
+        0.28444444444444444,
+        0.23931433524968324,
+        0.11846344252809454
+      ]
+    },
+    "6": {
+      "points": [
+        0.033765242898423975,
+        0.16939530676686776,
+        0.38069040695840156,
+        0.6193095930415985,
+        0.8306046932331322,
+        0.966234757101576
+      ],
+      "weights": [
+        0.08566224618958516,
+        0.1803807865240693,
+        0.23395696728634552,
+        0.23395696728634552,
+        0.1803807865240693,
+        0.08566224618958516
+      ]
+    },
+    "7": {
+      "points": [
+        0.025446043828620757,
+        0.12923440720030277,
+        0.2970774243113014,
+        0.5,
+        0.7029225756886985,
+        0.8707655927996972,
+        0.9745539561713792
+      ],
+      "weights": [
+        0.06474248308443485,
+        0.1398526957446383,
+        0.19091502525255946,
+        0.2089795918367347,
+        0.19091502525255946,
+        0.1398526957446383,
+        0.06474248308443485
+      ]
+    },
+    "8": {
+      "points": [
+        0.019855071751231856,
+        0.10166676129318664,
+        0.2372337950418355,
+        0.4082826787521751,
+        0.5917173212478248,
+        0.7627662049581645,
+        0.8983332387068134,
+        0.9801449282487682
+      ],
+      "weights": [
+        0.05061426814518815,
+        0.11119051722668724,
+        0.15685332293894366,
+        0.181341891689181,
+        0.181341891689181,
+        0.15685332293894366,
+        0.11119051722668724,
+        0.05061426814518815
+      ]
+    }
+  },
+  "quadrature": [
+    {
+      "id": "triangle-degree-1-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 1,
+      "exact_degree": 1,
+      "source": "slope_stability_petsc4py@c67128a5ffd7e1334b91f60a8062fbf30537a2a4:src/petsc_ssr/native/assembly/p4_basis.c",
+      "points": [
+        [
+          0.3333333333333333,
+          0.3333333333333333
+        ]
+      ],
+      "weights": [
+        0.5
+      ]
+    },
+    {
+      "id": "triangle-degree-5-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 2,
+      "exact_degree": 5,
+      "source": "slope_stability_petsc4py@c67128a5ffd7e1334b91f60a8062fbf30537a2a4:src/petsc_ssr/native/assembly/p4_basis.c",
+      "points": [
+        [
+          0.1012865073235,
+          0.1012865073235
+        ],
+        [
+          0.7974269853531,
+          0.1012865073235
+        ],
+        [
+          0.1012865073235,
+          0.7974269853531
+        ],
+        [
+          0.4701420641051,
+          0.0597158717898
+        ],
+        [
+          0.4701420641051,
+          0.4701420641051
+        ],
+        [
+          0.0597158717898,
+          0.4701420641051
+        ],
+        [
+          0.3333333333333333,
+          0.3333333333333333
+        ]
+      ],
+      "weights": [
+        0.0629695902724,
+        0.0629695902724,
+        0.0629695902724,
+        0.06619707639425,
+        0.06619707639425,
+        0.06619707639425,
+        0.1125
+      ]
+    },
+    {
+      "id": "triangle-degree-6-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 4,
+      "exact_degree": 6,
+      "source": "slope_stability_petsc4py@c67128a5ffd7e1334b91f60a8062fbf30537a2a4:src/petsc_ssr/native/assembly/p4_basis.c",
+      "points": [
+        [
+          0.063089014491502,
+          0.063089014491502
+        ],
+        [
+          0.063089014491502,
+          0.873821971016996
+        ],
+        [
+          0.873821971016996,
+          0.063089014491502
+        ],
+        [
+          0.24928674517091,
+          0.24928674517091
+        ],
+        [
+          0.24928674517091,
+          0.501426509658179
+        ],
+        [
+          0.501426509658179,
+          0.24928674517091
+        ],
+        [
+          0.310352451033785,
+          0.053145049844816
+        ],
+        [
+          0.310352451033785,
+          0.636502499121399
+        ],
+        [
+          0.053145049844816,
+          0.310352451033785
+        ],
+        [
+          0.053145049844816,
+          0.636502499121399
+        ],
+        [
+          0.636502499121399,
+          0.310352451033785
+        ],
+        [
+          0.636502499121399,
+          0.053145049844816
+        ]
+      ],
+      "weights": [
+        0.0254224531851035,
+        0.0254224531851035,
+        0.0254224531851035,
+        0.0583931378631895,
+        0.0583931378631895,
+        0.0583931378631895,
+        0.041425537809187,
+        0.041425537809187,
+        0.041425537809187,
+        0.041425537809187,
+        0.041425537809187,
+        0.041425537809187
+      ]
+    },
+    {
+      "id": "triangle-degree-8-duffy-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 4,
+      "exact_degree": 8,
+      "source": "generated Duffy tensor product of Gauss-Legendre rules on [0,1]",
+      "reuse_id": "generated-v1",
+      "construction": {
+        "kind": "duffy-tensor-gauss-legendre",
+        "axis_order": 5
+      }
+    },
+    {
+      "id": "triangle-degree-10-duffy-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 4,
+      "exact_degree": 10,
+      "source": "generated Duffy tensor product of Gauss-Legendre rules on [0,1]",
+      "reuse_id": "generated-v1",
+      "construction": {
+        "kind": "duffy-tensor-gauss-legendre",
+        "axis_order": 6
+      }
+    },
+    {
+      "id": "triangle-degree-12-duffy-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 4,
+      "exact_degree": 12,
+      "source": "generated Duffy tensor product of Gauss-Legendre rules on [0,1]",
+      "reuse_id": "generated-v1",
+      "construction": {
+        "kind": "duffy-tensor-gauss-legendre",
+        "axis_order": 7
+      }
+    },
+    {
+      "id": "tetrahedron-degree-1-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 1,
+      "exact_degree": 1,
+      "source": "slope_stability_petsc4py@c67128a5ffd7e1334b91f60a8062fbf30537a2a4:src/petsc_ssr/native/assembly/p4_basis.c",
+      "points": [
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ],
+      "weights": [
+        0.16666666666666666
+      ]
+    },
+    {
+      "id": "tetrahedron-degree-4-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 2,
+      "exact_degree": 4,
+      "source": "slope_stability_petsc4py@c67128a5ffd7e1334b91f60a8062fbf30537a2a4:src/petsc_ssr/native/assembly/p4_basis.c",
+      "points": [
+        [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.0714285714285714,
+          0.0714285714285714,
+          0.0714285714285714
+        ],
+        [
+          0.785714285714286,
+          0.0714285714285714,
+          0.0714285714285714
+        ],
+        [
+          0.0714285714285714,
+          0.785714285714286,
+          0.0714285714285714
+        ],
+        [
+          0.0714285714285714,
+          0.0714285714285714,
+          0.785714285714286
+        ],
+        [
+          0.399403576166799,
+          0.100596423833201,
+          0.100596423833201
+        ],
+        [
+          0.100596423833201,
+          0.399403576166799,
+          0.100596423833201
+        ],
+        [
+          0.100596423833201,
+          0.100596423833201,
+          0.399403576166799
+        ],
+        [
+          0.399403576166799,
+          0.399403576166799,
+          0.100596423833201
+        ],
+        [
+          0.399403576166799,
+          0.100596423833201,
+          0.399403576166799
+        ],
+        [
+          0.100596423833201,
+          0.399403576166799,
+          0.399403576166799
+        ]
+      ],
+      "weights": [
+        -0.013155555555555,
+        0.007622222222222,
+        0.007622222222222,
+        0.007622222222222,
+        0.007622222222222,
+        0.024888888888888,
+        0.024888888888888,
+        0.024888888888888,
+        0.024888888888888,
+        0.024888888888888,
+        0.024888888888888
+      ]
+    },
+    {
+      "id": "tetrahedron-degree-6-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 4,
+      "exact_degree": 6,
+      "source": "slope_stability_petsc4py@c67128a5ffd7e1334b91f60a8062fbf30537a2a4:src/petsc_ssr/native/assembly/p4_basis.c",
+      "points": [
+        [
+          0.3561913862225449,
+          0.2146028712591517,
+          0.2146028712591517
+        ],
+        [
+          0.2146028712591517,
+          0.2146028712591517,
+          0.2146028712591517
+        ],
+        [
+          0.2146028712591517,
+          0.2146028712591517,
+          0.3561913862225449
+        ],
+        [
+          0.2146028712591517,
+          0.3561913862225449,
+          0.2146028712591517
+        ],
+        [
+          0.877978124396166,
+          0.0406739585346113,
+          0.0406739585346113
+        ],
+        [
+          0.0406739585346113,
+          0.0406739585346113,
+          0.0406739585346113
+        ],
+        [
+          0.0406739585346113,
+          0.0406739585346113,
+          0.877978124396166
+        ],
+        [
+          0.0406739585346113,
+          0.877978124396166,
+          0.0406739585346113
+        ],
+        [
+          0.0329863295731731,
+          0.3223378901422757,
+          0.3223378901422757
+        ],
+        [
+          0.3223378901422757,
+          0.3223378901422757,
+          0.3223378901422757
+        ],
+        [
+          0.3223378901422757,
+          0.3223378901422757,
+          0.0329863295731731
+        ],
+        [
+          0.3223378901422757,
+          0.0329863295731731,
+          0.3223378901422757
+        ],
+        [
+          0.2696723314583159,
+          0.0636610018750175,
+          0.0636610018750175
+        ],
+        [
+          0.0636610018750175,
+          0.2696723314583159,
+          0.0636610018750175
+        ],
+        [
+          0.0636610018750175,
+          0.0636610018750175,
+          0.2696723314583159
+        ],
+        [
+          0.6030056647916491,
+          0.0636610018750175,
+          0.0636610018750175
+        ],
+        [
+          0.0636610018750175,
+          0.6030056647916491,
+          0.0636610018750175
+        ],
+        [
+          0.0636610018750175,
+          0.0636610018750175,
+          0.6030056647916491
+        ],
+        [
+          0.0636610018750175,
+          0.2696723314583159,
+          0.6030056647916491
+        ],
+        [
+          0.2696723314583159,
+          0.6030056647916491,
+          0.0636610018750175
+        ],
+        [
+          0.6030056647916491,
+          0.0636610018750175,
+          0.2696723314583159
+        ],
+        [
+          0.0636610018750175,
+          0.6030056647916491,
+          0.2696723314583159
+        ],
+        [
+          0.2696723314583159,
+          0.0636610018750175,
+          0.6030056647916491
+        ],
+        [
+          0.6030056647916491,
+          0.2696723314583159,
+          0.0636610018750175
+        ]
+      ],
+      "weights": [
+        0.00665379170969465,
+        0.00665379170969465,
+        0.00665379170969465,
+        0.00665379170969465,
+        0.0016795351758867832,
+        0.0016795351758867832,
+        0.0016795351758867832,
+        0.0016795351758867832,
+        0.0092261969239424,
+        0.0092261969239424,
+        0.0092261969239424,
+        0.0092261969239424,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283,
+        0.008035714285714283
+      ]
+    },
+    {
+      "id": "tetrahedron-degree-9-duffy-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 4,
+      "exact_degree": 9,
+      "source": "generated Duffy tensor product of Gauss-Legendre rules on [0,1]",
+      "reuse_id": "generated-v1",
+      "construction": {
+        "kind": "duffy-tensor-gauss-legendre",
+        "axis_order": 6
+      }
+    },
+    {
+      "id": "tetrahedron-degree-11-duffy-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 4,
+      "exact_degree": 11,
+      "source": "generated Duffy tensor product of Gauss-Legendre rules on [0,1]",
+      "reuse_id": "generated-v1",
+      "construction": {
+        "kind": "duffy-tensor-gauss-legendre",
+        "axis_order": 7
+      }
+    },
+    {
+      "id": "tetrahedron-degree-13-duffy-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 4,
+      "exact_degree": 13,
+      "source": "generated Duffy tensor product of Gauss-Legendre rules on [0,1]",
+      "reuse_id": "generated-v1",
+      "construction": {
+        "kind": "duffy-tensor-gauss-legendre",
+        "axis_order": 8
+      }
+    },
+    {
+      "id": "triangle-degree-14-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 8,
+      "exact_degree": 14,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "triangle-degree-15-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 8,
+      "exact_degree": 15,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "triangle-degree-16-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 8,
+      "exact_degree": 16,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "triangle-degree-17-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 8,
+      "exact_degree": 17,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "triangle-degree-18-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 8,
+      "exact_degree": 18,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "triangle-degree-19-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 2,
+      "dimension": 2,
+      "order": 8,
+      "exact_degree": 19,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "tetrahedron-degree-14-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 8,
+      "exact_degree": 14,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "tetrahedron-degree-15-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 8,
+      "exact_degree": 15,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "tetrahedron-degree-16-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 8,
+      "exact_degree": 16,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "tetrahedron-degree-17-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 8,
+      "exact_degree": 17,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "tetrahedron-degree-18-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 8,
+      "exact_degree": 18,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "tetrahedron-degree-19-petsc-minsym-v1",
+      "domain": "volume",
+      "parent_dimension": 3,
+      "dimension": 3,
+      "order": 8,
+      "exact_degree": 19,
+      "source": "PETSc 3.24.2 PetscDTSimplexQuadrature minimal-symmetric rule",
+      "reuse_id": "REUSE-0009",
+      "construction": {
+        "kind": "petsc-minimal-symmetric-simplex"
+      }
+    },
+    {
+      "id": "line-degree-1-v1",
+      "domain": "facet",
+      "parent_dimension": 2,
+      "dimension": 1,
+      "order": 1,
+      "exact_degree": 1,
+      "source": "generated Gauss-Legendre rule on [0,1]",
+      "reuse_id": "generated-v1",
+      "points": [
+        [
+          0.5
+        ]
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    {
+      "id": "line-degree-5-v1",
+      "domain": "facet",
+      "parent_dimension": 2,
+      "dimension": 1,
+      "order": 2,
+      "exact_degree": 5,
+      "source": "generated Gauss-Legendre rule on [0,1]",
+      "reuse_id": "generated-v1",
+      "points": [
+        [
+          0.1127016653792583
+        ],
+        [
+          0.5
+        ],
+        [
+          0.8872983346207417
+        ]
+      ],
+      "weights": [
+        0.2777777777777778,
+        0.4444444444444444,
+        0.2777777777777778
+      ]
+    },
+    {
+      "id": "line-degree-9-v1",
+      "domain": "facet",
+      "parent_dimension": 2,
+      "dimension": 1,
+      "order": 4,
+      "exact_degree": 9,
+      "source": "generated Gauss-Legendre rule on [0,1]",
+      "reuse_id": "generated-v1",
+      "points": [
+        [
+          0.04691007703066802
+        ],
+        [
+          0.23076534494715845
+        ],
+        [
+          0.5
+        ],
+        [
+          0.7692346550528415
+        ],
+        [
+          0.9530899229693319
+        ]
+      ],
+      "weights": [
+        0.11846344252809454,
+        0.23931433524968324,
+        0.28444444444444444,
+        0.23931433524968324,
+        0.11846344252809454
+      ]
+    },
+    {
+      "id": "line-degree-15-v1",
+      "domain": "facet",
+      "parent_dimension": 2,
+      "dimension": 1,
+      "order": 4,
+      "exact_degree": 15,
+      "source": "generated Gauss-Legendre paired rule on [0,1]",
+      "reuse_id": "generated-v1",
+      "points": [
+        [
+          0.01985507175123185
+        ],
+        [
+          0.10166676129318664
+        ],
+        [
+          0.2372337950418355
+        ],
+        [
+          0.4082826787521751
+        ],
+        [
+          0.5917173212478248
+        ],
+        [
+          0.7627662049581645
+        ],
+        [
+          0.8983332387068134
+        ],
+        [
+          0.9801449282487682
+        ]
+      ],
+      "weights": [
+        0.05061426814518815,
+        0.11119051722668724,
+        0.15685332293894366,
+        0.181341891689181,
+        0.181341891689181,
+        0.15685332293894366,
+        0.11119051722668724,
+        0.05061426814518815
+      ]
+    }
+  ],
+  "facet_aliases": [
+    {
+      "id": "triangle-facet-degree-1-v1",
+      "source_rule": "triangle-degree-1-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-5-v1",
+      "source_rule": "triangle-degree-5-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-6-v1",
+      "source_rule": "triangle-degree-6-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-8-duffy-v1",
+      "source_rule": "triangle-degree-8-duffy-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-10-duffy-v1",
+      "source_rule": "triangle-degree-10-duffy-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-12-duffy-v1",
+      "source_rule": "triangle-degree-12-duffy-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-14-petsc-minsym-v1",
+      "source_rule": "triangle-degree-14-petsc-minsym-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-15-petsc-minsym-v1",
+      "source_rule": "triangle-degree-15-petsc-minsym-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-16-petsc-minsym-v1",
+      "source_rule": "triangle-degree-16-petsc-minsym-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-17-petsc-minsym-v1",
+      "source_rule": "triangle-degree-17-petsc-minsym-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-18-petsc-minsym-v1",
+      "source_rule": "triangle-degree-18-petsc-minsym-v1",
+      "parent_dimension": 3
+    },
+    {
+      "id": "triangle-facet-degree-19-petsc-minsym-v1",
+      "source_rule": "triangle-degree-19-petsc-minsym-v1",
+      "parent_dimension": 3
+    }
+  ]
+}

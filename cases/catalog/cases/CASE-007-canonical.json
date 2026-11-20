@@ -1,0 +1,118 @@
+{
+  "kind": "slope_stability.case",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:94c262a469c9cbf0073bb850be26d43bc56f0d2ed5c0fa711afe9af0f3eb6fee"
+  },
+  "provenance": {
+    "origin": "matlab:slope_stability/slope_stability_2D_Sloan2013_SSR.m;native:benchmarks/cases/2d-sloan2013-seepage/case.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "case.case-007",
+    "title": "2d-sloan2013-seepage P1"
+  },
+  "asset": {
+    "name": "asset.2d_sloan2013.default.g1",
+    "variant": "default"
+  },
+  "discretization": {
+    "field_order": 1,
+    "coordinate_order": 1
+  },
+  "materials": [
+    {
+      "name": "hydraulic:slope_mass",
+      "support": "region:slope_mass",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    },
+    {
+      "name": "hydraulic:weak_layer",
+      "support": "region:weak_layer",
+      "model": "steady_unconfined_darcy",
+      "parameters": {
+        "conductivity": {
+          "value": 1.0,
+          "unit": "m/s"
+        },
+        "water_unit_weight": {
+          "value": 9.81,
+          "unit": "kN/m^3"
+        }
+      }
+    }
+  ],
+  "physics": {
+    "mechanics": false,
+    "seepage": true,
+    "coupling": "none"
+  },
+  "boundary_rules": [
+    {
+      "name": "head:00",
+      "field": "pore_pressure",
+      "condition": "essential",
+      "support": "nodeset:head_support",
+      "components": [
+        "scalar"
+      ],
+      "value_model": "piecewise_linear_level",
+      "parameters": {
+        "coordinates": [
+          0.0,
+          37.46573087549493
+        ],
+        "values": [
+          18.25,
+          9.0
+        ],
+        "coordinate_unit": "m",
+        "value_unit": "m"
+      }
+    }
+  ],
+  "analysis": {
+    "selector": "seepage.steady_unconfined"
+  },
+  "profiles": {
+    "continuation": "continuation.indirect-classic",
+    "nonlinear": "nonlinear.indirect-regularized-it50",
+    "linear": "linear.pmg-deflated",
+    "pmg": "pmg.pmg-deflated-baseline",
+    "deflation": "deflation.pmg-deflated-baseline",
+    "output": "output.case-007.p1",
+    "validation": "validation.default",
+    "seepage": "seepage.sloan2013-steady"
+  },
+  "case_overrides": {},
+  "required_outputs": [
+    "pore_pressure",
+    "pressure_gradient",
+    "saturation",
+    "global_flux_balance",
+    "nonlinear_history",
+    "conductivity",
+    "hydraulic_ramp",
+    "hydraulic_epsilon",
+    "pressure_flux",
+    "darcy_velocity"
+  ],
+  "id": "sha256:19f923d4c733d1c46348b91070d5ebab4f469b2e6495b320df6b68ed6f388dda"
+}

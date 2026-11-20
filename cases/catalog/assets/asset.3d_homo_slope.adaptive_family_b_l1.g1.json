@@ -1,0 +1,93 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:535aafcf93e295cf380368449eb8be2f1493061226a027e766088c320878e7fc"
+  },
+  "provenance": {
+    "origin": "native:meshes/3d_homo_slope/adaptive_family_b_l1.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.3d_homo_slope.adaptive_family_b_l1.g1",
+    "title": "3d_homo_slope adaptive_family_b_l1 G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/89e598b8945e138feeb8041002727612e097979b82c2223f326b1142c7fdcd73.msh",
+    "sha256": "89e598b8945e138feeb8041002727612e097979b82c2223f326b1142c7fdcd73"
+  },
+  "dimension": 3,
+  "cell_type": "tetrahedron",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "adaptive_family_b_l1"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:crest",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:slope_surface",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:x_max",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:x_min",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:z_max",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:z_min",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:x_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:z_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 3
+    }
+  ],
+  "id": "sha256:6c1b32db110f0bba10c091a78aeeb995ab88902ae88f0b6da08d25cb535d3bc5"
+}

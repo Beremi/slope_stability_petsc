@@ -1,0 +1,5 @@
+# Meshes are content-addressed inputs: never convert line endings or diff them.
+meshes/**/*.msh -text -diff
+
+# Record the commit in `git archive` output (Git-less source identity).
+cmake/source-revision.txt export-subst

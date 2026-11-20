@@ -1,0 +1,39 @@
+{
+  "generator": "slope_codegen.protocol",
+  "generator_version": "1",
+  "outputs": {
+    "docs/solver-options.md": "2cf2e5181dea4f841d29b8cbde5673419f3bc87712ea5a1946cba8615da37d60",
+    "generated/include/ss_fe_generated.h": "aa7cd296ccd7571905d9a9387ec36ca93f84b16c120ceadd7908b595ff159c2e",
+    "generated/include/ss_protocol_generated.h": "e8797780d75e87a7bb12769faf84f46b3c4b7713c35a82ce08fb98a082a995d6",
+    "generated/src/ss_fe_generated.c": "32dacd03223e4ba0f31434d26a2a825a9fcb6269bca659d76b55724d9a15b898",
+    "generated/src/ss_protocol_generated.c": "e51a088b45b066a8fba32316495bb5f703d34106d1dfc48353ab85e61eb84729",
+    "python/src/slope_protocol/generated.py": "edd1831bc11007dc678a4223f8fbd5a79418a4de4ca61a65b28a113e7d808ef3",
+    "python/src/slope_stability/_fe_layout.py": "a46b0a97421aca57c023991fd3313ec2ca4c37bcb95aa36fbf8b68960617075c",
+    "python/src/slope_stability/_solver_settings.py": "a41c7b21f700be86a4d74ba0bb104b0883a1e60b422ac35bc342f84b1cdf1104",
+    "schemas/fixtures/generated-conformance.json": "ef80833503f150775fff42b94250728ea6e38ca864b9b85a2e647cb49817b720",
+    "schemas/generated/json/asset.schema.json": "aefc28b1c82d677f28d0be9fc27cb7eb4fa43cd23686e8da0fe094eed71d5623",
+    "schemas/generated/json/build.schema.json": "19e561a1653a4c12db6a33aaa4ae563a150df13cb8999f62658a1121d94b5006",
+    "schemas/generated/json/case.schema.json": "1a2bebba0b696ac5048414746dbb6ec3d9b50c8fb6a4c74553a892521b28f436",
+    "schemas/generated/json/checkpoint.schema.json": "b91e6f0c9d80acf1b8c48b64a58ba942c1006e317483de9a5fe9230465a60c48",
+    "schemas/generated/json/compiled-problem.schema.json": "4838ebc765e8b6c8cc1bea4740e4b216cecddd76860dc2caee842866f0c201ba",
+    "schemas/generated/json/error.schema.json": "1f8c73f9accf15575466c48aa2cc15dcf6000485a6dc8ca55a9432dc32c44897",
+    "schemas/generated/json/events.schema.json": "028b1d6d17983e20b0f345cdb92366e63c0a518593c5a77c79dfcf2ead452071",
+    "schemas/generated/json/profile.schema.json": "5657cc087a3588780f5363a597ff6053667667d9c0ec7ec6cb73606dd495cf01",
+    "schemas/generated/json/resolved-run.schema.json": "e9a00774f53e8cea9c378b1e2aeb3924e3ed1fd2a6c9ff36cde7b8c66c4a7565",
+    "schemas/generated/json/result.schema.json": "713d98151f2b9bd67c8c208794298ecd4b61ecc9025a465c5b536be5350bcfbb",
+    "schemas/generated/json/suite.schema.json": "41ec3740650f907c3fb53eeb4f01f72751bcf60493e45a1595b96ecfff74281c",
+    "schemas/hdf5-layout/generated-layouts.json": "44bae922b7fe9f507d6a0ba7b9c94a3abbc488d88810b1bd831b5e5b915b67fc"
+  },
+  "schema_version": 1,
+  "sources": {
+    "generators/src/slope_codegen/finite_elements.py": "287d2edc2ac24f5e2fca18c26d5d87f442aaac36f299d1d4aaa954ba5d28d87d",
+    "generators/src/slope_codegen/protocol.py": "a69531b91e46fbec4285a155b96d95f76b467d44780bc4cff24dcb8e26371f25",
+    "generators/src/slope_codegen/solver_options.py": "5de01f50bd494ebf3d4caa2513e115473117e7e59b25ee07f5d28d8d98aa4281",
+    "include/slope_internal/core/solver_options.def": "2c91fe6485bc5843dfb51ce27617b83a0cc285548fe0e068852a5575ab03018d",
+    "schemas/source/conformance.json": "0dca41910c00d1b01bc775cabf3ecba2359ca182fe6eb32c5ae516c06dde4f0e",
+    "schemas/source/finite-elements.json": "a31f3c1dbf79f614982fb05bd11a0dbbcee73daec7ec979503d264cb957e7e50",
+    "schemas/source/hdf5-layouts.json": "ed383358bbc843750229d353b13a3eaac0a583782bb9ed6325ed874e2e96510d",
+    "schemas/source/petsc-minimal-symmetric-simplex.json": "634897657dd5b4bd8b27290bfa96112d9337ff4b34f2e34f3560acf4f76fa032",
+    "schemas/source/protocol.json": "b5c5a11cd76be10a065c092c86046ec96923c0bd3ffe3f394cc3c4e049352a9b"
+  }
+}

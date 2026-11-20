@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: BSD-2-Clause
+
+set(install_root "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}")
+set(engine "${install_root}/@CMAKE_INSTALL_BINDIR@/slope-engine")
+set(probe "${install_root}/@CMAKE_INSTALL_BINDIR@/slope-probe")
+set(data_root "${install_root}/@CMAKE_INSTALL_DATADIR@/slope-stability")
+
+if(NOT EXISTS "${engine}" OR NOT EXISTS "${probe}")
+  message(FATAL_ERROR "Installed native executables are missing")
+endif()
+file(SHA256 "${engine}" engine_sha256)
+file(SHA256 "${probe}" probe_sha256)
+file(GLOB_RECURSE schema_files LIST_DIRECTORIES false "${data_root}/schemas/*")
+list(SORT schema_files)
+set(schema_projection "")
+foreach(schema IN LISTS schema_files)
+  file(SHA256 "${schema}" schema_sha256)
+  file(RELATIVE_PATH relative "${data_root}" "${schema}")
+  string(APPEND schema_projection "${relative}:${schema_sha256}\n")
+endforeach()
+string(SHA256 schema_set_sha256 "${schema_projection}")
+string(
+  SHA256
+  executable_id
+  "engine:${engine_sha256}\nprobe:${probe_sha256}\nschemas:${schema_set_sha256}\n"
+)
+file(
+  WRITE
+  "${data_root}/install-manifest.json"
+  "{\"build_id\":\"@SLOPE_BUILD_ID@\",\"engine_sha256\":\"${engine_sha256}\",\"executable_id\":\"sha256:${executable_id}\",\"kind\":\"slope_stability.install\",\"probe_sha256\":\"${probe_sha256}\",\"schema_set_sha256\":\"${schema_set_sha256}\",\"schema_version\":{\"major\":1,\"minor\":0,\"patch\":0}}\n"
+)
+

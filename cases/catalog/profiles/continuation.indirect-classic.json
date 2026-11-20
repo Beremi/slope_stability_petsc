@@ -1,0 +1,38 @@
+{
+  "kind": "slope_stability.profile",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:d570ce7276c8e42aa0ecd9c358b027ec4a338492068efb25a0013a2e07ca27c4"
+  },
+  "provenance": {
+    "origin": "native:configs/continuation_profiles/indirect-classic.toml",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "continuation.indirect-classic",
+    "title": "continuation profile indirect-classic"
+  },
+  "family": "continuation",
+  "policy": {
+    "method": "indirect",
+    "initial_factor": 1.0,
+    "initial_step": 0.1,
+    "minimum_step": 0.001,
+    "maximum_step": 0.1,
+    "maximum_work": 1e+300,
+    "initial_work_scale": 0.2,
+    "scaled_slope_tolerance": 0.001,
+    "factor_increment_stop": 0.001,
+    "maximum_accepted_states": 100,
+    "initial_nonlinear_stopping_criterion": "relative_correction",
+    "initial_nonlinear_stopping_tolerance": 0.001
+  },
+  "id": "sha256:39f6556715897be6cb033d6cc3a5f2f770ea590569ecd7ad31da423d8fa3f181"
+}

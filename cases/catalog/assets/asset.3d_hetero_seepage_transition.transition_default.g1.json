@@ -1,0 +1,123 @@
+{
+  "kind": "slope_stability.asset",
+  "schema_version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "created_by": {
+    "tool": "slope-stability-catalog",
+    "tool_version": "1",
+    "source_id": "sha256:5cdaed0f960200a455fa49d76e405b6045d585e44586a8446fa49c50b6a9d9a2"
+  },
+  "provenance": {
+    "origin": "native:meshes/3d_hetero_seepage_transition/transition_default.msh",
+    "license": "BSD-2-Clause"
+  },
+  "extensions": {},
+  "identity": {
+    "name": "asset.3d_hetero_seepage_transition.transition_default.g1",
+    "title": "3d_hetero_seepage_transition transition_default G1"
+  },
+  "mesh_source": {
+    "importer": "gmsh.msh4",
+    "path": "meshes/68cd06dd7072ab6b0c3c494bd13d9cfed5098c2b4cae4c53d9d75be67ea86454.msh",
+    "sha256": "68cd06dd7072ab6b0c3c494bd13d9cfed5098c2b4cae4c53d9d75be67ea86454"
+  },
+  "dimension": 3,
+  "cell_type": "tetrahedron",
+  "coordinate_order": 1,
+  "variants": [
+    {
+      "name": "transition_default"
+    }
+  ],
+  "supports": [
+    {
+      "name": "boundary:base",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:crest",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_main",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_xmax",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_xmin",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_zmax",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "boundary:surface_zmin",
+      "kind": "boundary",
+      "dimension": 2
+    },
+    {
+      "name": "nodeset:base",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_dry",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_free",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:head_porous",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:x_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "nodeset:z_lock",
+      "kind": "node_set",
+      "dimension": 0
+    },
+    {
+      "name": "region:cover_layer",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:general_foundation",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:slope_mass",
+      "kind": "region",
+      "dimension": 3
+    },
+    {
+      "name": "region:weak_foundation",
+      "kind": "region",
+      "dimension": 3
+    }
+  ],
+  "id": "sha256:9cb4f988e07b1d9764c3d6cd869fa822b4ebd1376bfd00208d71c7dffcfd474d"
+}
