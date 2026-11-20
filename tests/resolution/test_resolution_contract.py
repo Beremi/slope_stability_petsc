@@ -628,6 +628,24 @@ class ResolutionContract(unittest.TestCase):
             ],
             4_096,
         )
+        # The operator workspace defaults to a quarter of the rank's memory
+        # share, at least 1024 MiB; an explicit value is kept.
+        self.assertNotIn(
+            "operator_workspace_mib", resolve_resource(resource(), field_order=4)
+        )
+        self.assertEqual(
+            resolve_resource(declared_memory, field_order=4)["operator_workspace_mib"],
+            1_024,
+        )
+        large_node = resource().model_copy(update={"memory_per_node_mib": 262_144})
+        self.assertEqual(
+            resolve_resource(large_node, field_order=4)["operator_workspace_mib"],
+            262_144 // large_node.ranks_per_node // 4,
+        )
+        explicit = large_node.model_copy(update={"operator_workspace_mib": 512})
+        self.assertEqual(
+            resolve_resource(explicit, field_order=4)["operator_workspace_mib"], 512
+        )
         overrides = {
             "resources.linear_vector_memory_cap_mib": 2_048,
             "pmg.mechanics_matrix_free": True,

@@ -82,7 +82,7 @@ P4 cases take much longer.
 - During development, `CASE-019` (3D, P4) did not complete with its catalog
   policies at `4x8` on the 32-core workstation described in
   [parallel-execution.md](parallel-execution.md): its mechanics operator
-  workspace exceeds the default memory admission limit
+  workspace exceeded the earlier fixed 1024 MiB admission limit
   (`--operator-workspace-mib`), and a run with a raised limit rejected its
   step at load factor 1.2 after reaching the Newton iteration limit.
 - Most catalog profiles were carried over from the earlier implementations

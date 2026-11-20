@@ -467,6 +467,9 @@ SsStatus ss_operator_allocate_work(SsOperator *operator_handle) {
     return SS_ERROR_RESOURCE;
   }
   available = memory_cap - fixed_bytes;
+  if (available > SS_ASSEMBLY_TILE_BUDGET) {
+    available = SS_ASSEMBLY_TILE_BUDGET;
+  }
   capacity = available / per_cell_bytes;
   if (capacity > operator_handle->plan->cell_count) {
     capacity = operator_handle->plan->cell_count;

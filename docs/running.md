@@ -110,7 +110,7 @@ Launch options:
 | `--timeout-seconds S` | Stop a variant after `S` seconds (default 86400) |
 | `--checkpoint-every N`, `--checkpoint-seconds S`, `--checkpoint-keep K` | In-run checkpoints ([outputs.md](outputs.md#checkpoints-and-restart)) |
 | `--quiet` | No engine progress lines on standard error |
-| `--operator-workspace-mib M` | Memory cap, in MiB, of the mechanics operator workspace |
+| `--operator-workspace-mib M` | Memory cap, in MiB, of the rank-local mechanics operator workspace (default: a quarter of the rank's share of available node memory, at least 1024) |
 | `--address-space-limit-bytes B` | `RLIMIT_AS` applied to the launched processes |
 
 The launcher sets `OMP_NUM_THREADS=T`, `OMP_PROC_BIND=close`,

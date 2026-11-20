@@ -3,6 +3,24 @@
 All notable changes to this project are recorded here. Versions follow
 [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Changed
+
+- With a single active coarse rank, the PMG coarse LU uses SuperLU_DIST when
+  PETSc provides it, instead of PETSc's native LU. `CASE-021` at `1x8` went
+  from 270 s to 250 s.
+- Unless `--operator-workspace-mib` is given, the operator workspace cap is a
+  quarter of the rank's share of available node memory, at least 1024 MiB.
+  The fixed 1024 MiB default rejected `CASE-012` below four ranks. Element
+  tiles keep a 1 GiB budget, so a larger cap does not enlarge them.
+
+### Added
+
+- Hybrid scaling measurements from `1x8` to `4x8`, with figures, and
+  guidance on L3 cache domains in
+  [docs/parallel-execution.md](docs/parallel-execution.md).
+
 ## [0.1.0] - 2026-11-19
 
 First public release.

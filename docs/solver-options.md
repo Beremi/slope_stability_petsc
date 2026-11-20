@@ -41,7 +41,7 @@ are read from PETSc's options database by the native engine.
 | `continuation.work_predictor_error_target` | stable | number | `1.0` | 2.2250738585072014e-308 to 1.7976931348623157e+308, inclusive | Dimensionless predictor error target for adaptive work stepping. |
 | `continuation.work_step_scale_minimum` | stable | number | `0.5` | 2.2250738585072014e-308 to 1.0, inclusive | Lower multiplicative bound on adaptive work-step updates. |
 | `continuation.work_step_scale_maximum` | stable | number | `2.0` | 1.0 to 1.7976931348623157e+308, inclusive | Upper multiplicative bound on adaptive work-step updates. |
-| `resources.operator_workspace_mib` | stable | integer | `1024` | 1 to 2147483647, inclusive | Rank-local mechanics operator workspace cap in MiB. |
+| `resources.operator_workspace_mib` | stable | integer | `1024` | 1 to 2147483647, inclusive | Rank-local mechanics operator workspace cap in MiB. When unset, the resolver uses a quarter of the rank's share of available node memory, at least 1024 MiB. |
 | `resources.mechanics_pmg_memory_cap_mib` | stable | integer | `2048` | 1 to 2147483647, inclusive | Aggregate mechanics PMG storage cap in MiB. |
 | `resources.hydraulic_pmg_memory_cap_mib` | stable | integer | `2048` | 1 to 2147483647, inclusive | Aggregate seepage PMG storage cap in MiB. |
 | `resources.linear_vector_memory_cap_mib` | stable | integer | `1024` | 1 to 2147483647, inclusive | Aggregate Krylov and deflation vector cap in MiB for either field. |

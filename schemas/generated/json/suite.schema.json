@@ -92,7 +92,7 @@
           },
           "operator_workspace_mib": {
             "default": 1024,
-            "description": "Rank-local mechanics operator workspace cap in MiB.",
+            "description": "Rank-local mechanics operator workspace cap in MiB. When unset, the resolver uses a quarter of the rank's share of available node memory, at least 1024 MiB.",
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer"

@@ -13,6 +13,10 @@
 #include <string.h>
 
 #define SS_ASSEMBLY_DEFAULT_MEMORY_CAP (UINT64_C(256) * UINT64_C(1024) * UINT64_C(1024))
+/* Upper bound of the element tile buffers.  The workspace cap only admits
+ * memory; the tile size, and with it the order of the tile-wise sums, stays
+ * the same for every cap that can hold a full tile. */
+#define SS_ASSEMBLY_TILE_BUDGET (UINT64_C(1024) * UINT64_C(1024) * UINT64_C(1024))
 #define SS_OPERATOR_REFERENCE_ACTION_MAX_QUADRATURE 512U
 #define SS_OPERATOR_MATRIX_FREE_MAX_BLOCK_NODES 35U
 #define SS_OPERATOR_MATRIX_FREE_MAX_ACTION_BATCH 32U

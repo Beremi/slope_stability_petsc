@@ -423,7 +423,13 @@ SsStatus ss_solver_pmg_create(const SsSolverGraph *graph, SsFieldSpace *fine_spa
         coarse_summary.global_free_dof_count <=
             graph->policy.pmg_coarse_direct_maximum_dofs) {
       if (active_count == 1U) {
+        /* One coarse rank: prefer SuperLU_DIST's supernodal factorization to
+         * PETSc's native sparse LU, which is several times slower here. */
+#if defined(PETSC_HAVE_SUPERLU_DIST)
+        levels[0].method = SS_PMG_LEVEL_PREONLY_SUPERLU_DIST;
+#else
         levels[0].method = SS_PMG_LEVEL_PREONLY_LU;
+#endif
         levels[0].maximum_iterations = 1;
       } else if (group_size == 1U) {
         if (active_count > (size_t)PETSC_MAX_INT) {

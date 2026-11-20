@@ -50,6 +50,14 @@ checks the observed masks; the catalog run report records them under
  "2": [16, 17, 18, 19, 20, 21, 22, 23], "3": [24, 25, 26, 27, 28, 29, 30, 31]}
 ```
 
+Many CPUs split a package into several L3 cache domains, for example the
+8-core CCDs of AMD EPYC and Threadripper processors. Ranks receive
+consecutive cores, so a rank's threads share one L3 domain when `T` divides
+the number of cores per domain, and a rank owns whole domains when `T` is a
+multiple of it. On the 32-core machine above, which has four 8-core CCDs
+(cores 0–7, 8–15, 16–23 and 24–31), each rank of `4x8` owns one CCD and its
+L3. `lscpu -e=CPU,CORE,L3` or `lstopo` shows the domains of a machine.
+
 The launcher uses this OpenMP and library thread environment for the engine.
 
 ```text
@@ -82,15 +90,67 @@ layout.
 
 ## Measured guidance
 
-The numbers below were measured during development, before this release, on
-one workstation: AMD Ryzen Threadripper PRO 7975WX (32 cores, 64 hardware
+All numbers below come from one workstation: AMD Ryzen Threadripper PRO
+7975WX (32 cores in four 8-core CCDs with 32 MiB of L3 each, 64 hardware
 threads, one NUMA node), GCC 16.2.1, Open MPI 5.0.11, parallel HDF5 2.2.0 and
 PETSc 3.24.2 with 32-bit indices and SuperLU_DIST, with verified core binding.
-These measurements used the PETSc build with serial sparse kernels.
-The workstation ran other jobs concurrently, so the timings vary between
-waves. They show tendencies on one machine, not performance guarantees.
+They show tendencies on one machine, not performance guarantees.
 
-### Complete strength-reduction runs
+### Hybrid scaling of this release
+
+These runs used this release with the PETSc build with threaded sparse
+kernels ([building.md](building.md)) on an otherwise idle machine. Each case
+ran its catalog policies to the end of the continuation, in qualification
+mode, writing every accepted state, with
+`slope-stability run --layout Rx8 --verify-binding`. With `T = 8` each rank
+owned one CCD, and each OpenMP thread one physical core.
+
+| Case | Unknowns | `1x8` | `2x8` | `3x8` | `4x8` | Speedup, `1x8` to `4x8` |
+|---|---:|---:|---:|---:|---:|---:|
+| `CASE-021`, P2, median of 3 runs | 71,970 | 249.9 s | 121.6 s | 79.7 s | 64.4 s | 3.88 (97%) |
+| `CASE-012`, curved P4, 1 run | 625,647 | 2,427.6 s | 1,187.2 s | 788.6 s | 667.4 s | 3.64 (91%) |
+
+![Wall time, speedup and parallel efficiency from 1x8 to 4x8](figures/hybrid-scaling.png)
+
+- Up to `3x8` both cases ran at or above 100% parallel efficiency. A rank on
+  one CCD is limited by that CCD's L3 cache and memory link, and each added
+  rank brings its own. For `CASE-021` the Krylov time per iteration fell from
+  21.3 ms at `1x8` to 5.1 ms at `4x8`.
+- `CASE-012` gained least from the fourth rank. Its Krylov time per iteration
+  fell 3.4 times from `1x8` to `4x8`, and the `4x8` partition needed 14% more
+  Krylov iterations than `3x8`. Iteration counts change with the partition.
+
+![Time per solver phase for each layout](figures/hybrid-phases.png)
+
+The phase times come from the PETSc event log of the slowest rank. On all 32
+cores, `CASE-021` also ran as `8x4` and `32x1`:
+
+| Layout | Wall time, median of 3 | Sum of peak memory over ranks |
+|---|---:|---:|
+| `4x8` | 64.4 s | 1.37 GiB |
+| `8x4` | 52.9 s | 1.90 GiB |
+| `32x1` | 52.5 s | 4.81 GiB |
+
+For this assembled P2 case, more ranks with fewer threads took about 18%
+less time than `4x8`, at up to 3.5 times the memory. Assembly took the largest
+share of the `32x1` time.
+
+![Peak resident memory per rank and in total](figures/hybrid-memory.png)
+
+The peak resident memory of the largest rank falls almost in proportion to
+the number of ranks: for `CASE-012` it was 12.5 GiB at `1x8` and 3.7 GiB at
+`4x8`. Each added rank adds its own runtime and halo memory, so the sum over
+ranks grew from 12.5 to 14.4 GiB for `CASE-012` and from 0.92 to 1.37 GiB for
+`CASE-021`. No rank holds a copy of the whole problem.
+
+### Earlier development measurements
+
+The measurements in this section were made before this release with the
+PETSc build with serial sparse kernels, while the workstation ran other jobs,
+so the timings vary between waves. They compare operators and layouts; for
+the current speed of complete runs see the section above.
+
+#### Complete strength-reduction runs
 
 `CASE-021` (3D SSR, 15,356 tetrahedra, P2 elements with straight geometry)
 with its catalog policies, four accepted states, two coarse active ranks and
@@ -103,8 +163,8 @@ three paired executions.
 | `32x1` | 444 | 8.1 s |
 
 With these policies the mechanics operators are assembled, and the pure-MPI
-layout was about 1.7 times faster. PETSc's sparse-matrix, vector and Krylov
-operations run on one thread per rank, so a layout with fewer ranks leaves
+layout was about 1.7 times faster. With serial kernels, PETSc's sparse-matrix,
+vector and Krylov operations run on one thread per rank, so a layout with fewer ranks leaves
 that part of the solver on fewer cores. An earlier measurement wave gave a
 `4x8` median of 13.1 s, which indicates the timing spread on the shared
 machine.
@@ -124,7 +184,7 @@ products, 3.8 s in `VecMDot` and 0.04 s in `VecAXPY`. The events overlap.
 Sparse matrix-vector products and smoothing dominate, and they run on one
 thread per rank; dot products still require MPI reductions.
 
-### Matrix-free operator apply
+#### Matrix-free operator apply
 
 A curved P4 operator with order-4 geometry on 3,072 tetrahedra and a
 degree-14 quadrature, applied after linearization. The table gives the median
@@ -145,7 +205,7 @@ In an earlier measurement on the same operator, assembling the tangent matrix
 took 223 ms at `1x32`, 191 ms at `4x8` and 168 ms at `32x1`, so assembly
 favored ranks instead.
 
-### Memory per rank
+#### Memory per rank
 
 `CASE-010` (3D, 55,895 tetrahedra, P2 mechanics and seepage) in
 `slope-engine validate`, which builds the distributed mesh, fields,
@@ -173,8 +233,11 @@ fewer ranks with more threads.
 - No layout is best for every case. Compare two or three layouts on a short
   run of your own case (`--maximum-accepted-states 4`) before a long run.
 - For assembled operators with low polynomial order, include pure MPI
-  (`Rx1`); on the workstation above it was the fastest. Start with `32x1`
-  for an assembled case like `CASE-021` when memory permits.
+  (`Rx1`) and a layout with a few threads per rank. On the workstation above,
+  `CASE-021` took 52.5 s at `32x1`, 52.9 s at `8x4` and 64.4 s at `4x8`, and
+  `32x1` needed 3.5 times the memory of `4x8`.
+- Keep the threads of a rank inside one L3 domain: choose `T` as a divisor or
+  a multiple of the cores per domain.
 - For matrix-free high-order operators, include a hybrid layout. With
   bounded waiting and the overlapped exchange, the curved P4/G4 apply
   medians over three interleaved launches were 1.71 ms at `1x32`, 1.57 ms

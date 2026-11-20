@@ -517,6 +517,23 @@ def resolve_resource(
     vector_cap = resource.linear_vector_memory_cap_mib
     if vector_cap is None:
         vector_cap = max(1, min(2**31 - 1, min(caps) // 4)) if caps else 1024
+    # Unless set explicitly, the rank-local operator workspace may use a quarter
+    # of the rank's share of node memory, and never less than the 1024 MiB
+    # engine default.  A fixed cap rejected large high-order problems on few
+    # ranks although the node had memory to spare.
+    workspace_cap = resource.operator_workspace_mib
+    rank_shares = [
+        share
+        for share in (
+            resource.memory_per_node_mib // resource.ranks_per_node
+            if resource.memory_per_node_mib is not None
+            else None,
+            resource.address_space_per_rank_mib,
+        )
+        if share is not None
+    ]
+    if workspace_cap is None and rank_shares:
+        workspace_cap = max(1024, min(2**31 - 1, min(rank_shares) // 4))
     resources = {
         "name": resource.name,
         "nodes": resource.nodes,
@@ -556,6 +573,8 @@ def resolve_resource(
     ):
         if name in resource_values:
             resources[name] = resource_values[name]
+    if workspace_cap is not None:
+        resources["operator_workspace_mib"] = workspace_cap
     resources["linear_vector_memory_cap_mib"] = vector_cap
     return resources
 
